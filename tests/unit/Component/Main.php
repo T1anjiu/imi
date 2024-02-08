@@ -13,7 +13,7 @@ class Main extends AppBaseMain
      */
     public function __init()
     {
-        // 这里可以做一些初始化操作，如果需要的话
+        // You can do some initialization operations here, if necessary
         parent::__init();
         $path = Imi::getRuntimePath('test');
         if (is_dir($path))
