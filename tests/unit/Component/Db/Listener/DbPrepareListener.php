@@ -15,7 +15,7 @@ use Imi\Log\Log;
 class DbPrepareListener implements IEventListener
 {
     /**
-     * 事件处理方法.
+     * Event Handling Method
      *
      * @param DbPrepareEventParam $e
      *
