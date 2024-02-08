@@ -416,27 +416,32 @@ class IndexController extends SingletonHttpController
         return compact('id', 'name', 'page');
     }
 
-    /**
-     * 测试重复路由警告.
-     *
-     * @Action
-     * @Route("/duplicated")
-     *
-     * @return void
-     */
-    public function duplicated1()
-    {
-    }
-
-    /**
-     * 测试重复路由警告.
-     *
-     * @Action
-     * @Route("/duplicated")
-     *
-     * @return void
-     */
-    public function duplicated2()
-    {
-    }
-}
+/**  
+     * Test for duplicate route warning.  
+     * NOTE: Having two methods with the same route ("/duplicated") will cause a conflict.  
+     * Each route should be unique to avoid issues during routing.  
+     *  
+     * @Action  
+     * @Route("/duplicated")  
+     *  
+     * @return void  
+     */  
+    public function duplicated1()  
+    {  
+        // Function body (left empty in the original snippet)  
+    }  
+  
+    /**  
+     * Another test for duplicate route warning.  
+     * THIS IS A DUPLICATE AND WILL CAUSE PROBLEMS. Change the route to something unique.  
+     *  
+     * @Action  
+     * @Route("/duplicated") // This should be changed to a unique route, e.g., @Route("/duplicated2")  
+     *  
+     * @return void  
+     */  
+    public function duplicated2()  
+     {  
+        // Function body (left empty in the original snippet)  
+     }
+	}

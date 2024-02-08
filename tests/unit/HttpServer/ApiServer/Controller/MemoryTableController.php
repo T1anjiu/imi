@@ -34,7 +34,7 @@ class MemoryTableController extends HttpController
     }
 
     /**
-     * 删除行的数据.
+     * Delete row data.
      *
      * @Action
      *
@@ -56,7 +56,7 @@ class MemoryTableController extends HttpController
     }
 
     /**
-     * 行数据是否存在.
+     * Does the row data exist.
      *
      * @Action
      *
@@ -77,7 +77,7 @@ class MemoryTableController extends HttpController
     }
 
     /**
-     * 原子自增.
+     * atomic increment.
      *
      * @Action
      *
@@ -99,7 +99,7 @@ class MemoryTableController extends HttpController
     }
 
     /**
-     * 原子自减.
+     * atomic decrement.
      *
      * @Action
      *
@@ -121,7 +121,7 @@ class MemoryTableController extends HttpController
     }
 
     /**
-     * 获取表行数.
+     * Get the number of table rows.
      *
      * @Action
      *
@@ -135,7 +135,7 @@ class MemoryTableController extends HttpController
     }
 
     /**
-     * 设置行的数据.
+     * Set row data.
      *
      * @Action
      *
@@ -160,7 +160,7 @@ class MemoryTableController extends HttpController
     }
 
     /**
-     * 设置行的数据.
+     * Set row data.
      *
      * @Action
      *
