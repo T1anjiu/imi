@@ -37,7 +37,7 @@ class ConfigTest extends BaseTest
             'a' => [
                 'b' => 123,
             ],
-            // 配置文件
+            // Configuration file
             'configs'	 => [
                 'test'		 => \dirname(__DIR__) . '/config/test.php',
             ],

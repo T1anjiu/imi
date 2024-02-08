@@ -14,7 +14,7 @@ class EnumTest extends BaseTest
     public function test()
     {
         $data = TestEnum::getData(TestEnum::A);
-        Assert::assertEquals('甲', $data->text);
+        Assert::assertEquals('itemA', $data->text);
         // @phpstan-ignore-next-line
         Assert::assertEquals('a1', $data->other);
 
@@ -30,7 +30,7 @@ class EnumTest extends BaseTest
             TestEnum::C,
         ], TestEnum::getValues());
 
-        Assert::assertEquals('丙', TestEnum::getText(TestEnum::C));
+        Assert::assertEquals('itemC', TestEnum::getText(TestEnum::C));
         Assert::assertEquals(TestEnum::B, TestEnum::getValue('B'));
         Assert::assertEquals([
             'A' => TestEnum::A,

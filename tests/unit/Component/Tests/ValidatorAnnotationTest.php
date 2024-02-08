@@ -57,7 +57,7 @@ class ValidatorAnnotationTest extends BaseTest
         }
         catch (\Throwable $th)
         {
-            $this->assertStringEndsWith('1000 不符合大于等于0且小于等于100', $th->getMessage());
+            $this->assertStringEndsWith('1000 does not meet the criteria of being greater than or equal to 0 and less than or equal to 100', $th->getMessage());
         }
 
         try
@@ -142,7 +142,7 @@ class ValidatorAnnotationTest extends BaseTest
         $this->initData();
         $this->data['in'] = 100;
         $this->assertFalse($this->tester->validate());
-        $this->assertEquals('100 不在列表内', $this->tester->getMessage());
+        $this->assertEquals('100 is not present in the list', $this->tester->getMessage());
     }
 
     private function intFail()
@@ -150,11 +150,11 @@ class ValidatorAnnotationTest extends BaseTest
         $this->initData();
         $this->data['int'] = -1;
         $this->assertFalse($this->tester->validate());
-        $this->assertEquals('-1 不符合大于等于0且小于等于100', $this->tester->getMessage());
+        $this->assertEquals('-1 is not within the range of 0 to 100', $this->tester->getMessage());
 
         $this->data['int'] = 'a';
         $this->assertFalse($this->tester->validate());
-        $this->assertEquals('a 不符合大于等于0且小于等于100', $this->tester->getMessage());
+        $this->assertEquals('a is not within the range of 0 to 100', $this->tester->getMessage());
     }
 
     private function requiredFail()
@@ -162,7 +162,7 @@ class ValidatorAnnotationTest extends BaseTest
         $this->initData();
         unset($this->data['required']);
         $this->assertFalse($this->tester->validate());
-        $this->assertEquals('required为必须参数', $this->tester->getMessage());
+        $this->assertEquals('required is a mandatory parameter', $this->tester->getMessage());
     }
 
     private function numberFail()
@@ -170,11 +170,11 @@ class ValidatorAnnotationTest extends BaseTest
         $this->initData();
         $this->data['number'] = 1.234;
         $this->assertFalse($this->tester->validate());
-        $this->assertEquals('数值必须大于等于0.01，小于等于999.99，小数点最多保留2位小数，当前值为1.234', $this->tester->getMessage());
+        $this->assertEquals('The numeric value must be greater than or equal to 0.01 and less than or equal to 999.99, with a maximum of 2 decimal places. The current value is 1.234', $this->tester->getMessage());
 
         $this->data['number'] = 0;
         $this->assertFalse($this->tester->validate());
-        $this->assertEquals('数值必须大于等于0.01，小于等于999.99，小数点最多保留2位小数，当前值为0', $this->tester->getMessage());
+        $this->assertEquals('The numeric value must be greater than or equal to 0.01 and less than or equal to 999.99, with a maximum of 2 decimal places. However, the current value is 0, which does not meet the minimum requirement of 0.01', $this->tester->getMessage());
     }
 
     private function textFail()
@@ -182,27 +182,27 @@ class ValidatorAnnotationTest extends BaseTest
         $this->initData();
         $this->data['text'] = '';
         $this->assertFalse($this->tester->validate());
-        $this->assertEquals('text参数长度必须>=6 && <=12', $this->tester->getMessage());
+        $this->assertEquals('The length of the text parameter must be >=6 && <=12', $this->tester->getMessage());
 
         $this->data['text'] = '1234567890123';
         $this->assertFalse($this->tester->validate());
-        $this->assertEquals('text参数长度必须>=6 && <=12', $this->tester->getMessage());
+        $this->assertEquals('The length of the text parameter must be >=6 && <=12', $this->tester->getMessage());
     }
 
     private function textCharFail()
     {
         $this->initData();
 
-        $this->data['chars'] = '这个可以通过';
+        $this->data['chars'] = 'This can be passed';
         $this->assertTrue($this->tester->validate());
 
-        $this->data['chars'] = '测试不通过';
+        $this->data['chars'] = 'Test failed';
         $this->assertFalse($this->tester->validate());
-        $this->assertEquals('chars参数长度必须>=6 && <=12', $this->tester->getMessage());
+        $this->assertEquals('The length of the chars parameter must be >=6 && <=12', $this->tester->getMessage());
 
-        $this->data['chars'] = '测试不通过测试不通过测试不通过';
+        $this->data['chars'] = 'Test does not pass';
         $this->assertFalse($this->tester->validate());
-        $this->assertEquals('chars参数长度必须>=6 && <=12', $this->tester->getMessage());
+        $this->assertEquals('The length of the chars parameter must be >=6 && <=12', $this->tester->getMessage());
     }
 
     private function validateValueFail()
@@ -269,7 +269,7 @@ class ValidatorAnnotationTest extends BaseTest
         $validator = new TestSceneValidator($data);
         $this->assertFalse($validator->setCurrentScene('b')->validate());
 
-        // 全部
+        // All
         $data = [
             'decimal' => 1.1,
             'int'     => 1,
@@ -325,7 +325,7 @@ class ValidatorAnnotationTest extends BaseTest
         $validator = new TestSceneAnnotationValidator($data);
         $this->assertFalse($validator->setCurrentScene('b')->validate());
 
-        // 全部
+        // All
         $data = [
             'decimal' => 1.1,
             'int'     => 1,

@@ -386,32 +386,32 @@ class ModelTest extends BaseTest
 
     public function testSoftDelete()
     {
-        // 插入
+        // insert
         $record = TestSoftDelete::newInstance();
         $record->title = 'test';
         $result = $record->insert();
         $this->assertTrue($result->isSuccess());
-        // 可以查到
+        // Can be found
         $this->assertNotNull(TestSoftDelete::find($record->id));
 
-        // 软删除
+        // soft deletion
         $result = $record->delete();
         $this->assertTrue($result->isSuccess());
-        // 删除时间字段
+        // Remove time field
         $this->assertNotEmpty($record->deleteTime);
-        // 查不到
+        // Can not be found
         $this->assertNull(TestSoftDelete::find($record->id));
-        // 可以查到
+        // Can be found
         $this->assertNotNull(TestSoftDelete::findDeleted($record->id));
 
-        // 恢复
+        // Recover
         $record->restore();
-        // 可以查到
+        // Can be found
         $this->assertNotNull(TestSoftDelete::find($record->id));
 
-        // 物理删除
+        // Physical removal
         $record->hardDelete();
-        // 查不到
+        // Can not be found
         $this->assertNull(TestSoftDelete::find($record->id));
         $this->assertNull(TestSoftDelete::findDeleted($record->id));
     }
