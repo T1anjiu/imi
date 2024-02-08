@@ -11,7 +11,7 @@ use Imi\Lock\Annotation\Lockable;
 class TestLockAnnotation
 {
     /**
-     * @Lockable(id="锁ID", afterLock={"$this", "check"})
+     * @Lockable(id="LockID", afterLock={"$this", "check"})
      *
      * @return int
      */
@@ -29,7 +29,7 @@ class TestLockAnnotation
     }
 
     /**
-     * @Lockable(id="锁ID", afterLock={"$this", "check2"})
+     * @Lockable(id="LockID", afterLock={"$this", "check2"})
      *
      * @return int
      */
@@ -46,7 +46,7 @@ class TestLockAnnotation
     }
 
     /**
-     * @Lockable(id="锁ID")
+     * @Lockable(id="LockID")
      *
      * @return int
      */
