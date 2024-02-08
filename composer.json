@@ -1,0 +1,82 @@
+{
+    "name": "imiphp/imi",
+    "type": "library",
+    "license": "MulanPSL-1.0",
+    "description": "imi is a high-performance coroutine application development framework based on PHP Swoole. It supports the development of HttpApi, WebSocket, TCP, UDP, and MQTT services.",
+    "require": {
+        "php": ">=7.1.0",
+        "ext-swoole": ">=4.4",
+        "yurunsoft/swoole-co-pool": "^1.1.0",
+        "yurunsoft/doctrine-annotations": "^1.73.0",
+        "psr/log": "~1.0",
+        "psr/container": "~1.0",
+        "psr/http-message": "~1.0",
+        "psr/http-server-middleware": "~1.0",
+        "psr/simple-cache": "~1.0",
+        "vlucas/phpdotenv": "~5.3",
+        "phpdocumentor/reflection-docblock": "^4.3|^5.2"
+    },
+    "require-dev": {
+        "yurunsoft/ide-helper": "~1.0",
+        "yurunsoft/yurun-http": "^4.0.0",
+        "yurunsoft/swoole-co-pool": "~1.0",
+        "swoole/ide-helper": "^4.6",
+        "phpunit/phpunit": ">=7",
+        "friendsofphp/php-cs-fixer": "2.18.3",
+        "phpstan/phpstan": "0.12.82"
+    },
+    "autoload": {
+        "psr-4": {
+            "Imi\\": "src/"
+        },
+        "files": [
+            "src/functions.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Imi\\Dev\\": "dev/",
+            "Imi\\Test\\": "tests/unit/"
+        },
+        "files": [
+            "dev/include.php"
+        ]
+    },
+    "prefer-stable": true,
+    "bin": [
+        "bin/imi"
+    ],
+    "scripts": {
+        "post-autoload-dump": [
+            "Imi\\Dev\\Plugin::dev"
+        ],
+        "test": "./tests/run",
+        "install-test": "php --ri swoole && composer install && composer test",
+        "test-jwt": "tests/phpunit -c src/Components/jwt/tests/phpunit.xml",
+        "test-queue": "tests/phpunit -c src/Components/queue/tests/phpunit.xml",
+        "test-amqp": "tests/phpunit -c src/Components/amqp/tests/phpunit.xml",
+        "test-kafka": "tests/phpunit -c src/Components/kafka/tests/phpunit.xml",
+        "test-grpc": "tests/phpunit -c src/Components/grpc/tests/phpunit.xml",
+        "test-snowflake": "tests/phpunit -c src/Components/snowflake/tests/phpunit.xml",
+        "test-mqtt": "tests/phpunit -c src/Components/mqtt/tests/phpunit.xml",
+        "test-smarty": "tests/phpunit -c src/Components/smarty/tests/phpunit.xml",
+        "test-components": [
+            "composer test-jwt",
+            "composer test-queue",
+            "composer test-amqp",
+            "composer test-kafka",
+            "composer test-grpc",
+            "composer test-snowflake",
+            "(php -r \"exit(version_compare(PHP_VERSION, '7.2', '>=') ? 0 : 1);\" && composer test-mqtt) || echo 'skip mqtt'",
+            "composer test-smarty"
+        ]
+    },
+    "extra": {
+        "ide-helper": {
+            "list": [
+                "redis",
+                "inotify"
+            ]
+        }
+    }
+}
