@@ -5,7 +5,7 @@ use Imi\Log\LogLevel;
 return [
     'configs'    => [
     ],
-    // bean扫描目录
+    // Bean Scanning Directories
     'beanScan'    => [
         'Imi\Test\Component\Tests',
         'Imi\Test\Component\Aop',
@@ -36,7 +36,7 @@ return [
         ],
         'Logger'            => [
             'exHandlers'    => [
-                // 指定级别日志输出trace
+                // Specify the log level to output trace messages
                 [
                     'class'        => \Imi\Log\Handler\File::class,
                     'options'      => [
@@ -86,23 +86,23 @@ return [
     'imi'   => 'very six',
     'yurun' => '',
 
-    // 连接池配置
-    'pools'    => [
-        // 主数据库
-        'maindb'    => [
-            'pool'    => [
-                // 同步池类名
-                'syncClass'     => \Imi\Db\Pool\SyncDbPool::class,
-                // 协程池类名
-                'asyncClass'    => \Imi\Db\Pool\CoroutineDbPool::class,
-                // 连接池配置
-                'config'        => [
-                    'maxResources'              => 10,
-                    'minResources'              => 1,
-                    'checkStateWhenGetResource' => false,
-                ],
-            ],
-            // 连接池资源配置
+// Connection pool configuration  
+'pools' => [  
+    // Main database  
+    'maindb' => [  
+        'pool' => [  
+            // Synchronous pool class name  
+            'syncClass' => \Imi\Db\Pool\SyncDbPool::class,  
+            // Asynchronous (coroutine) pool class name  
+            'asyncClass' => \Imi\Db\Pool\CoroutineDbPool::class,  
+            // Connection pool configuration  
+            'config' => [  
+                'maxResources' => 10,  
+                'minResources' => 1,  
+                'checkStateWhenGetResource' => false,  
+            ],  
+        ],  
+            // Resource configuration for the connection pool
             'resource'    => [
                 'host'        => imiGetEnv('MYSQL_SERVER_HOST', '127.0.0.1'),
                 'port'        => imiGetEnv('MYSQL_SERVER_PORT', 3306),
@@ -112,9 +112,9 @@ return [
                 'charset'     => 'utf8mb4',
             ],
         ],
-        // 主数据库
+        // Slave database for the main database
         'maindb.slave'    => [
-            // 同步池子
+            // Synchronous pool configuration
             'sync'    => [
                 'pool'    => [
                     'class'        => \Imi\Db\Pool\SyncDbPool::class,
@@ -132,7 +132,7 @@ return [
                     'charset'     => 'utf8mb4',
                 ],
             ],
-            // 异步池子，worker进程使用
+            // Asynchronous task pool utilized by worker processes
             'async'    => [
                 'pool'    => [
                     'class'        => \Imi\Db\Pool\CoroutineDbPool::class,
@@ -154,16 +154,16 @@ return [
         // swoole mysql
         'swooleMysql'    => [
             'pool'    => [
-                // 协程池类名
+                // CoroutinePool
                 'asyncClass'    => \Imi\Db\Pool\CoroutineDbPool::class,
-                // 连接池配置
+                // Connection Pool Configuration
                 'config'        => [
                     'maxResources'              => 10,
                     'minResources'              => 1,
                     'checkStateWhenGetResource' => false,
                 ],
             ],
-            // 连接池资源配置
+            // Connection Pool Resource Allocation
             'resource'    => [
                 'host'        => imiGetEnv('MYSQL_SERVER_HOST', '127.0.0.1'),
                 'port'        => imiGetEnv('MYSQL_SERVER_PORT', 3306),
@@ -177,16 +177,16 @@ return [
         // mysqli
         'mysqli'    => [
             'pool'    => [
-                // 协程池类名
+                // CoroutinePool
                 'asyncClass'    => \Imi\Db\Pool\CoroutineDbPool::class,
-                // 连接池配置
+                // Connection Pool Configuration
                 'config'        => [
                     'maxResources'              => 10,
                     'minResources'              => 1,
                     'checkStateWhenGetResource' => false,
                 ],
             ],
-            // 连接池资源配置
+            // Connection Pool Resource Allocation
             'resource'    => [
                 'host'        => imiGetEnv('MYSQL_SERVER_HOST', '127.0.0.1'),
                 'port'        => imiGetEnv('MYSQL_SERVER_PORT', 3306),
@@ -296,21 +296,22 @@ return [
             ],
         ],
     ],
-    // db 配置
-    'db' => [
-        // 数默认连接池名
-        'defaultPool'   => 'maindb',
-    ],
-    // redis 配置
-    'redis' => [
-        // 数默认连接池名
-        'defaultPool'   => 'redis_test',
-    ],
-    // 缓存配置
-    'cache' => [
-        'default'   => 'file1',
-    ],
-    // 缓存
+				// Database configuration  
+				'db' => [  
+			    // Default connection pool name  
+			    'defaultPool'   => 'maindb',  
+			],  
+				// Redis configuration  
+				'redis' => [  
+			    // Default connection pool name  
+			    'defaultPool'   => 'redis_test',  
+			],  
+				// Cache configuration  
+				'cache' => [  
+				// Default cache driver  
+			   'default'   => 'file1',  
+			],
+	// Cache
     'caches'    => [
         'file1'  => [
             'handlerClass'  => \Imi\Cache\Handler\File::class,
@@ -323,7 +324,7 @@ return [
             'handlerClass'  => \Imi\Cache\Handler\File::class,
             'option'        => [
                 'savePath'    => dirname(__DIR__) . '/.runtime/cache/',
-                // 保存文件名处理回调，一般可以不写
+                // Callback for handling saved file names, which can generally be omitted
                 'saveFileNameCallback'    => function ($savePath, $key) {
                     return \Imi\Util\File::path($savePath, sha1($key));
                 },
@@ -346,12 +347,12 @@ return [
             ],
         ],
     ],
-    // atmoic 配置
+    // atmoic configuration
     'atomics'    => [
         'atomicLock'   => 1,
         'test',
     ],
-    // 锁
+    // lock
     'lock'  => [
         'list'  => [
             'redis' => [
