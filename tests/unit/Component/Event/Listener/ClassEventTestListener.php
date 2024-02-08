@@ -14,7 +14,7 @@ use PHPUnit\Framework\Assert;
 class ClassEventTestListener implements IEventListener
 {
     /**
-     * 事件处理方法.
+     * Event Handling Method
      *
      * @param \Imi\Event\EventParam $e
      *
