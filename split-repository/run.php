@@ -26,7 +26,7 @@ function execCMD(string $cmd, string $description = '', ?array &$result = null, 
 }
 
 /**
- * 根据最后一次处理的提交记录，获取commit列表，顺序从旧到新.
+ * Obtain the commit list based on the last processed commit record, ordered from oldest to newest.
  *
  * @return array
  */
@@ -181,13 +181,13 @@ $mainRepoPath = dirname(__DIR__) . '/';
 
 loadConfig();
 
-// 主仓库
+// Main repository
 chdir($mainRepoPath);
 
 $branch = getBranch();
 $commits = getCommitsFromLast($GLOBALS['config'][$branch]['last_commit'] ?? null);
 
-// 子仓库更新
+// Update sub-repository
 foreach ($storeRepoMap as $name => $urls)
 {
     $url = $urls[0];
@@ -197,16 +197,16 @@ foreach ($storeRepoMap as $name => $urls)
     if (is_dir($repoPath))
     {
         chdir($repoPath);
-        execCMD('git reset --hard && git pull', '拉取' . $repoName);
+        execCMD('git reset --hard && git pull', 'pull' . $repoName);
     }
     else
     {
         chdir(__DIR__);
-        execCMD('git clone ' . $url, '克隆' . $url);
+        execCMD('git clone ' . $url, 'clone' . $url);
         chdir($repoPath);
     }
 
-    execCMD('git branch -a', '分支列表', $branches);
+    execCMD('git branch -a', 'branch List', $branches);
     $noBranch = !$branch;
     if ($branch)
     {
@@ -230,8 +230,8 @@ foreach ($storeRepoMap as $name => $urls)
     $len = count($urls);
     for ($i = 1; $i < $len; ++$i)
     {
-        execCMD('git remote remove r' . $i . ' ' . $urls[$i], '删除远端' . $i);
-        execCMD('git remote add r' . $i . ' ' . $urls[$i], '增加远端' . $i);
+        execCMD('git remote remove r' . $i . ' ' . $urls[$i], 'Remove remote ' . $i);  
+        execCMD('git remote add r' . $i . ' ' . $urls[$i], 'Add remote ' . $i);
     }
     $path = $name . '/';
     $pathLen = strlen($path);
@@ -244,7 +244,7 @@ foreach ($storeRepoMap as $name => $urls)
         $date = $result[0];
         execCMD('git show ' . $commit . ' -s --format=%s', '', $result);
         $message = $result[0];
-        execCMD('git --no-pager show ' . $commit . ' --stat=99999', '提交记录', $result);
+        execCMD('git --no-pager show ' . $commit . ' --stat=99999', 'Commit Details', $result);
 
         $needCommit = false;
         foreach ($result as $row)
@@ -256,10 +256,10 @@ foreach ($storeRepoMap as $name => $urls)
 
             if (preg_match('/(.+)\s+=>\s+(.+)/', $matches[1], $matches2))
             {
-                // 重命名
+                // Rename
                 if ('}' === $matches2[2][-1])
                 {
-                    // 同目录下重命名
+                    // Rename in the same directory
                     $from = str_replace('{', '', $matches2[1]);
                     $to = dirname($from) . '/' . substr($matches2[2], 0, -1);
                 }
@@ -298,7 +298,7 @@ foreach ($storeRepoMap as $name => $urls)
             }
             else
             {
-                // 文件修改
+                // File modification
                 $fileName = $matches[1];
                 if ($path === substr($fileName, 0, $pathLen))
                 {
@@ -354,11 +354,11 @@ foreach ($storeRepoMap as $name => $urls)
     {
         if (0 === $i)
         {
-            execCMD('git push --set-upstream origin ' . $branch, '推送');
+            execCMD('git push --set-upstream origin ' . $branch, 'Push');
         }
         else
         {
-            execCMD('git push --set-upstream r' . $i . ' ' . $branch, '推送' . $i);
+            execCMD('git push --set-upstream r' . $i . ' ' . $branch, 'Push to ' . $i);
         }
     }
 }
