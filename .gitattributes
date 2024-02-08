@@ -1,0 +1,13 @@
+* text=auto
+
+/.gitattributes export-ignore
+/.gitignore export-ignore
+/.github export-ignore
+/res export-ignore
+/tests export-ignore
+/doc export-ignore
+/website export-ignore
+/mddoc export-ignore
+/split-repository export-ignore
+/dev export-ignore
+/src/Components export-ignore
