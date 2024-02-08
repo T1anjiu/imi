@@ -29,7 +29,7 @@ class TestRedisHashModel extends RedisModel
     protected $id;
 
     /**
-     * 获取 id.
+     * get id.
      *
      * @return int
      */
@@ -39,7 +39,7 @@ class TestRedisHashModel extends RedisModel
     }
 
     /**
-     * 赋值 id.
+     * assignment id.
      *
      * @param int $id id
      *
@@ -62,7 +62,7 @@ class TestRedisHashModel extends RedisModel
     protected $name;
 
     /**
-     * 获取 name.
+     * get name.
      *
      * @return string
      */
@@ -72,7 +72,7 @@ class TestRedisHashModel extends RedisModel
     }
 
     /**
-     * 赋值 name.
+     * assignment name.
      *
      * @param string $name name
      *
@@ -95,7 +95,7 @@ class TestRedisHashModel extends RedisModel
     protected $age;
 
     /**
-     * 获取 age.
+     * get age.
      *
      * @return string
      */
@@ -105,7 +105,7 @@ class TestRedisHashModel extends RedisModel
     }
 
     /**
-     * 赋值 age.
+     * assignment age.
      *
      * @param string $age age
      *

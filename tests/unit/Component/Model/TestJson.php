@@ -11,12 +11,12 @@ use Imi\Test\Component\Model\Base\TestJsonBase;
  *
  * @Inherit
  *
- * @property \Imi\Util\LazyArrayObject|array $jsonData json数据
+ * @property \Imi\Util\LazyArrayObject|array $jsonData jsonData
  */
 class TestJson extends TestJsonBase
 {
     /**
-     * json数据
+     * 
      * json_data.
      *
      * @Column(name="json_data", type="json", length=0, accuracy=0, nullable=false, default="", isPrimaryKey=false, primaryKeyIndex=-1, isAutoIncrement=false)

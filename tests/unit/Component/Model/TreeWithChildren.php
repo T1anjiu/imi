@@ -17,7 +17,7 @@ use Imi\Model\Tree\Annotation\TreeModel;
 class TreeWithChildren extends Tree
 {
     /**
-     * 子节点集合.
+     * set of child nodes.
      *
      * @Column(virtual=true)
      *
@@ -26,7 +26,7 @@ class TreeWithChildren extends Tree
     protected $children = [];
 
     /**
-     * Get 子节点集合.
+     * Get set of child nodes.
      *
      * @return static[]
      */
@@ -36,7 +36,7 @@ class TreeWithChildren extends Tree
     }
 
     /**
-     * Set 子节点集合.
+     * Set set of child nodes.
      *
      * @param static[] $children
      *

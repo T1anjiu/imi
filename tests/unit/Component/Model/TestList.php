@@ -25,7 +25,7 @@ class TestList extends TestListBase
     protected $list;
 
     /**
-     * 获取 list.
+     * get list.
      *
      * @phpstan-ignore-next-line
      *
@@ -37,7 +37,7 @@ class TestList extends TestListBase
     }
 
     /**
-     * 赋值 list.
+     * assignment list.
      *
      * @phpstan-ignore-next-line
      *
