@@ -24,8 +24,6 @@ imi framework has rich functional components, which can be widely used in the In
 
 > The development of imi v2 version has begun (as of 2020-09). If you have any questions or suggestions, please feel free to contact us!
 
-imi framework communication group: 17916227 [![Click to join the group](https://pub.idqqimg.com/wpa/images/group.png "Click to join the group")](https://jq.qq.com/?_wv=1027&k=5wXf4Zq)
-
 ## Official Video Tutorials (Completely Free)
 
 imi framework introductory tutorial (free 11 episodes full) <https://www.bilibili.com/video/av78158909>
