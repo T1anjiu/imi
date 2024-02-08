@@ -13,7 +13,7 @@ use Imi\Tool\ArgType;
 class TestTool
 {
     /**
-     * 测试.
+     * test.
      *
      * @Operation("test")
      * @Arg(name="code", type=ArgType::INT, default=0)
