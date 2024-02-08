@@ -1,4 +1,4 @@
-# imi - 基于 Swoole 的 PHP 协程开发框架
+# imi - PHP Coroutine Development Framework based on Swoole
 
 <p align="center">
     <a href="https://www.imiphp.com" target="_blank">
@@ -14,177 +14,177 @@
 [![imi License](https://img.shields.io/badge/license-MulanPSL%201.0-brightgreen.svg)](https://github.com/imiphp/imi/blob/master/LICENSE)
 [![star](https://gitee.com/yurunsoft/IMI/badge/star.svg?theme=gvp)](https://gitee.com/yurunsoft/IMI/stargazers)
 
-## 介绍
+## Introduction
 
-imi 是基于 PHP Swoole 的高性能协程应用开发框架，它支持 HttpApi、WebSocket、TCP、UDP、MQTT 服务的开发。
+imi is a high-performance coroutine application development framework based on PHP Swoole, which supports the development of HttpApi, WebSocket, TCP, UDP, and MQTT services.
 
-在 Swoole 的加持下，相比 php-fpm 请求响应能力，I/O密集型场景处理能力，有着本质上的提升。
+With the support of Swoole, compared to PHP-FPM, imi significantly improves the ability to handle I/O-intensive scenarios.
 
-imi 框架拥有丰富的功能组件，可以广泛应用于互联网、移动通信、企业软件、云计算、网络游戏、物联网（IOT）、车联网、智能家居等领域。可以使企业 IT 研发团队的效率大大提升，更加专注于开发创新产品。
+imi framework has rich functional components, which can be widely used in the Internet, mobile communications, enterprise software, cloud computing, online games, Internet of Things (IoT), car networking, smart home, and other fields. It can greatly improve the efficiency of enterprise IT R&D teams and focus more on developing innovative products.
 
-> 目前 imi v2 版本已经开始开发了（2020-09），如果有任何问题或建议，欢迎联系我们！
+> The development of imi v2 version has begun (as of 2020-09). If you have any questions or suggestions, please feel free to contact us!
 
-imi 框架交流群：17916227 [![点击加群](https://pub.idqqimg.com/wpa/images/group.png "点击加群")](https://jq.qq.com/?_wv=1027&k=5wXf4Zq)
+## Official Video Tutorials (Completely Free)
 
-## 官方视频教程（完全免费）
+imi framework introductory tutorial (free 11 episodes full) <https://www.bilibili.com/video/av78158909>
 
-imi 框架入门教程（免费11集全）<https://www.bilibili.com/video/av78158909>
+imi framework advanced tutorial - Gobang game development (free 7 episodes full) <https://space.bilibili.com/768718/channel/detail?cid=136926>
 
-imi 框架进阶教程——五子棋游戏开发(免费7集全)<https://space.bilibili.com/768718/channel/detail?cid=136926>
+### Core Components
 
-### 核心组件
-
-* HttpApi、WebSocket、TCP、UDP、MQTT 服务器
-* MySQL 连接池 (主从+负载均衡)
-* Redis 连接池 (主从+负载均衡)
-* 超好用的 ORM (Db、Redis、Tree)
-* 毫秒级热更新
+* HttpApi, WebSocket, TCP, UDP, MQTT servers
+* MySQL connection pool (master-slave + load balancing)
+* Redis connection pool (master-slave + load balancing)
+* Extremely easy-to-use ORM (Db, Redis, Tree)
+* Millisecond-level hot reload
 * AOP
-* Bean 容器
-* 缓存 (Cache)
-* 配置读写 (Config)
-* 枚举 (Enum)
-* 事件 (Event)
-* 门面 (Facade)
-* 验证器 (Validate)
-* 锁 (Lock)
-* 日志 (Log)
-* 异步任务 (Task)
+* Bean container
+* Cache
+* Configuration reading and writing (Config)
+* Enum
+* Event
+* Facade
+* Validator
+* Lock
+* Log
+* Asynchronous tasks (Task)
 
-### 扩展组件
+### Extended Components
 
 * [MQTT](src/Components/mqtt)
 * [RPC](src/Components/rpc)
 * [gRPC](src/Components/grpc)
 * [Hprose](src/Components/hprose)
-* [消息队列](src/Components/queue)
-* [AMQP](src/Components/amqp) (支持 AMQP 协议的消息队列都可用，如：RabbitMQ)
+* [Message Queue](src/Components/queue)
+* [AMQP](src/Components/amqp) (Supports message queues using the AMQP protocol, such as RabbitMQ)
 * [Kafka](src/Components/kafka)
-* [JWT](src/Components/jwt) (在 imi 框架中非常方便地接入 jwt)
-* [权限控制](src/Components/access-control)
-* [Smarty 模版引擎](src/Components/smarty)
-* [限流](src/Components/rate-limit)
-* [跨进程变量共享](src/Components/shared-memory)
-* [雪花算法发号器](src/Components/snowflake)
-* [Swagger API 文档生成](src/Components/apidoc)
+* [JWT](src/Components/jwt) (Conveniently integrates JWT into the imi framework)
+* [Access Control](src/Components/access-control)
+* [Smarty Template Engine](src/Components/smarty)
+* [Rate Limiting](src/Components/rate-limit)
+* [Cross-Process Variable Sharing](src/Components/shared-memory)
+* [Snowflake Algorithm ID Generator](src/Components/snowflake)
+* [Swagger API Documentation Generation](src/Components/apidoc)
 * [Swoole Tracker](src/Components/swoole-tracker)
 
-> 这些组件都已经在 imi 主仓库中维护
+> These components are all maintained in the main repository of imi.
 
-## 开始使用
+## Getting Started
 
-创建 Http Server 项目：`composer create-project imiphp/project-http:~1.0`
+Create Http Server project: `composer create-project imiphp/project-http:~1.0`
 
-创建 WebSocket Server 项目：`composer create-project imiphp/project-websocket:~1.0`
+Create WebSocket Server project: `composer create-project imiphp/project-websocket:~1.0`
 
-创建 TCP Server 项目：`composer create-project imiphp/project-tcp:~1.0`
+Create TCP Server project: `composer create-project imiphp/project-tcp:~1.0`
 
-创建 UDP Server 项目：`composer create-project imiphp/project-udp:~1.0`
+Create UDP Server project: `composer create-project imiphp/project-udp:~1.0`
 
-创建 MQTT Server 项目：`composer create-project imiphp/project-mqtt:~1.0`
+Create MQTT Server project: `composer create-project imiphp/project-mqtt:~1.0`
 
-[完全开发手册](https://doc.imiphp.com)
+[Complete Development Manual](https://doc.imiphp.com)
 
-## 运行环境
+## Runtime Environment
 
-* Linux 系统 (Swoole 不支持在 Windows 上运行)
+* Linux system (Swoole does not support running on Windows)
 * [PHP](https://php.net/) >= 7.1
 * [Composer](https://getcomposer.org/)
-* [Swoole](https://www.swoole.com/) >= 4.4.0
-* Redis、PDO 扩展
+* [Swoole](
+
+https://www.swoole.com/) >= 4.4.0
+* Redis, PDO extensions
 
 ## Docker
 
-推荐使用 Swoole 官方 Docker：<https://github.com/swoole/docker-swoole>
+It is recommended to use the official Swoole Docker: <https://github.com/swoole/docker-swoole>
 
-## 成功案例
+## Success Stories
 
-不论您使用 imi 开发的是个人项目还是公司项目，不管是开源还是商业，都可以向我们提交案例。
+Whether you are developing personal projects or company projects using imi, whether open source or commercial, you can submit cases to us.
 
-案例可能会被采纳并展示在 imi 官网、Swoole 官网等处，这对项目的推广和发展有着促进作用。
+Cases may be adopted and displayed on the imi official website, Swoole official website, etc., which promotes the promotion and development of projects.
 
-**提交格式：**
+**Submission Format:**
 
-* 项目名称
-* 项目介绍
-* 项目地址（官网/下载地址/Github等至少一项）
-* 联系方式（电话/邮箱/QQ/微信等至少一项）
-* 项目截图（可选）
-* 感言
+* Project Name
+* Project Introduction
+* Project URL (official website/download URL/Github, etc., at least one)
+* Contact Information (phone/email/QQ/WeChat, etc., at least one)
+* Project Screenshots (optional)
+* Testimonials
 
-### 案例展示
+### Case Display
 
-* [看个蛋影视搜索 - 全网影视资源搜索平台](http://www.kangedan.com/)
+* [Kangedan Movie and TV Search - Full Network Movie and TV Resource Search Platform](http://www.kangedan.com/)
 
-![看个蛋影视搜索](https://www.imiphp.com/images/anli/kangedan.jpg "看个蛋影视搜索")
+![Kangedan Movie and TV Search](https://www.imiphp.com/images/anli/kangedan.jpg "Kangedan Movie and TV Search")
 
-**项目介绍：** 从最早的建站初心是为了自己方便！放到网络的以来，当流量越来越大的时候是要考虑升级配置还是重构项目，前几天 git 上看到 imiphp，索性就拿来实践一下，也是简单就重构出了所有页面，模版引擎引入了 TP 的 think-template，整个重构也就一天不到，所以 imiphp 确实很容易上手！加油！
-
----
-
-* [虎扑 - 上亿数据迁移服务]
-
-![虎扑](https://www.imiphp.com/images/anli/hupu.jpg "虎扑")
-
-**项目介绍：** 随着数据规模的越来越大，mysql已经不能适用大数据多维度的查询，需要用ES等一类的搜索引擎，进行多维度的分词查询，MYSQL现阶段使用按天分表存储，不能满足跨天的长时间查询。
-
-如何以最快的速度完成数据迁移，将数据库中的数据迁移到ES中，是需要评估的一个重要技术点。
-
-在高IO密集的场景下，单次请求需要80毫秒，imi运用Swoole协程，不断在用户态和内核态之间进行切换，充分利用计算机CPU，从而能快速完成海量数据迁移。
-
-根据普罗米修斯的监控统计，在 两台 2C 4G的机器上，imi以每秒钟同步1000~1500条的同步速度，完成了上亿级别的数据迁移。
-
-博文地址：<https://blog.csdn.net/qq_32783703/article/details/113576741>
+**Project Introduction:** The earliest purpose of building a website was for my own convenience! After it was put on the Internet, as the traffic became larger and larger, it was necessary to consider upgrading the configuration or refactoring the project. A few days ago, I saw imiphp on GitHub, so I decided to try it out. I simply refactored all the pages with imiphp, and introduced the think-template of TP as the template engine. The entire refactoring took less than a day, so imiphp is indeed very easy to use! Keep it up!
 
 ---
 
-* [教书先生API - 提供免费接口调用平台](https://api.oioweb.cn/)
+* [Hupu - Hundreds of millions of data migration services]
 
-![教书先生API](https://www.imiphp.com/images/anli/jsxsapi.png "教书先生API")
+![Hupu](https://www.imiphp.com/images/anli/hupu.jpg "Hupu")
 
-**项目介绍：** 教书先生API是免费提供API数据接口调用服务平台 - 我们致力于为用户提供稳定、快速的免费API数据接口服务。
+**Project Introduction:** With the increasing data scale, MySQL is no longer suitable for multi-dimensional queries of big data, and ES and other search engines are needed for multi-dimensional word segmentation queries. At present, MYSQL uses partitioned storage by day, which cannot meet long-term queries across days.
 
-**感言：**
+How to complete the data migration at the fastest speed, and migrate the data in the database to ES, is an important technical point that needs to be evaluated.
 
-之前的话服务器配置是8H8G 30M这样的一个配置，每天日300万+的一个请求量，有一次是某个接口因一个错误时不时会导致服务器直接宕机，一个偶然的搜索看到了群主（宇润）大佬的一个imi项目，于是熬夜给程序内部请求核心代码换上了imi，正好手里面有一台1H2G 5M的服务器，拿来测试了一下，配合Redis 200万-300万+一点问题都没有的，最后还是要感谢宇润大佬的开源项目。
+In high IO-intensive scenarios, a single request takes 80 milliseconds, and imi uses Swoole coroutines to switch between user space and kernel space, fully utilizing the CPU of the computer, so that it can quickly complete the massive data migration.
+
+According to the monitoring statistics of Prometheus, on two 2C 4G machines, imi has a synchronization speed of 1000~1500 records per second, and has completed the data migration of hundreds of millions.
+
+Blog address: <https://blog.csdn.net/qq_32783703/article/details/113576741>
 
 ---
 
-## 版权信息
+* [Teacher's API - Free API Call Platform](https://api.oioweb.cn/)
 
-imi 遵循 木兰宽松许可证(Mulan PSL v2) 开源协议发布，并提供免费使用。
+![Teacher's API](https://www.imiphp.com/images/anli/jsxsapi.png "Teacher's API")
 
-## 鸣谢
+**Project Introduction:** Teacher's API is a free API data interface call service platform - we are committed to providing users with stable and fast free API data interface services.
 
-感谢以下开源项目 (按字母顺序排列) 为 imi 提供强力支持！
+**Testimonials:**
 
-* [doctrine/annotations](https://github.com/doctrine/annotations) (PHP 注解处理类库)
-* [PHP](https://php.net/) (没有 PHP 就没有 imi)
-* [Swoole](https://www.swoole.com/) (没有 Swoole 就没有 imi)
+Previously, the server configuration was 8H8G 30M and other configurations, with a daily traffic of over 3 million requests. Once, a certain interface would cause the server to crash due to an occasional error. I found the imiphp project by chance on GitHub, so I stayed up late to replace the core code of the program's internal request with imi. Fortunately, I had a 1H2G 5M server on hand for testing, coupled with Redis, and there were no problems with 2-3 million+ requests. Finally, I would like to thank the open source project of Mr. Yurun.
 
-## 贡献者
+---
 
-[![贡献者](https://opencollective.com/IMI/contributors.svg?width=890&button=false)](https://github.com/imiphp/imi/graphs/contributors)
+## Copyright Information
 
-你想出现在贡献者列表中吗？
+imi is released under the Mulan Permissive Software License (Mulan PSL v2) open source license and is free to use.
 
-你可以做的事（包括但不限于以下）：
+## Acknowledgments
 
-* 纠正拼写、错别字
-* 完善注释
-* bug修复
-* 功能开发
-* 文档编写
-* 教程、博客分享
+Thanks to the following open source projects (in alphabetical order) for their strong support for imi!
 
-> 最新代码以 `dev` 分支为准，提交 `PR` 也请合并至 `dev` 分支！
+* [doctrine/annotations](https://github.com/doctrine/annotations) (PHP annotation processing library)
+* [PHP](https://php.net/) (No PHP, no imi)
+* [Swoole](https://www.swoole.com/) (No Swoole, no imi)
 
-提交 `Pull Request` 到本仓库，你就有机会成为 imi 的作者之一！
+## Contributors
 
-参与框架开发教程详见：<doc/adv/devp.md>
+[![Contributors](https://opencollective.com/IMI/contributors.svg?width=890&button=false)](https://github.com/imiphp/imi/graphs/contributors)
 
-## 捐赠
+Do you want to appear on the contributors list?
 
-![捐赠](https://cdn.jsdelivr.net/gh/imiphp/imi@dev/res/pay.png)
+Things you can do (including but not limited to the following):
 
-开源不求盈利，多少都是心意，生活不易，随缘随缘……
+* Correct spelling and typos
+* Improve comments
+* Bug fixes
+* Feature development
+* Document writing
+* Tutorial, blog sharing
+
+> The latest code is based on the `dev` branch, and please merge your `PR` to the `dev` branch!
+
+Submit a `Pull Request` to this repository, and you have the opportunity to become one of the authors of imi!
+
+See the development tutorial for framework participation: <doc/adv/devp.md>
+
+## Donation
+
+![Donation](https://cdn.jsdelivr.net/gh/imiphp/imi@dev/res/pay.png)
+
+Open source does not seek profit. It's all about goodwill. Life is not easy. Just go with the flow...
