@@ -9,7 +9,7 @@ use Imi\Model\Annotation\Table;
 use Imi\Model\Model as Model;
 
 /**
- * tb_update_time 基类.
+ * tb_update_time Base Class.
  *
  * @Entity
  * @Table(name="tb_update_time", id={"id"})
@@ -36,7 +36,7 @@ abstract class UpdateTimeBase extends Model
     protected $id;
 
     /**
-     * 获取 id.
+     * get id.
      *
      * @return int
      */
@@ -46,7 +46,7 @@ abstract class UpdateTimeBase extends Model
     }
 
     /**
-     * 赋值 id.
+     * assignment id.
      *
      * @param int $id id
      *
@@ -69,7 +69,7 @@ abstract class UpdateTimeBase extends Model
     protected $date;
 
     /**
-     * 获取 date.
+     * get date.
      *
      * @return string
      */
@@ -79,7 +79,7 @@ abstract class UpdateTimeBase extends Model
     }
 
     /**
-     * 赋值 date.
+     * assignment date.
      *
      * @param string $date date
      *
@@ -102,7 +102,7 @@ abstract class UpdateTimeBase extends Model
     protected $time;
 
     /**
-     * 获取 time.
+     * get time.
      *
      * @return string
      */
@@ -112,7 +112,7 @@ abstract class UpdateTimeBase extends Model
     }
 
     /**
-     * 赋值 time.
+     * assignment time.
      *
      * @param string $time time
      *
@@ -135,7 +135,7 @@ abstract class UpdateTimeBase extends Model
     protected $datetime;
 
     /**
-     * 获取 datetime.
+     * get datetime.
      *
      * @return string
      */
@@ -145,7 +145,7 @@ abstract class UpdateTimeBase extends Model
     }
 
     /**
-     * 赋值 datetime.
+     * assignment datetime.
      *
      * @param string $datetime datetime
      *
@@ -168,7 +168,7 @@ abstract class UpdateTimeBase extends Model
     protected $timestamp;
 
     /**
-     * 获取 timestamp.
+     * get timestamp.
      *
      * @return string
      */
@@ -178,7 +178,7 @@ abstract class UpdateTimeBase extends Model
     }
 
     /**
-     * 赋值 timestamp.
+     * assignment timestamp.
      *
      * @param string $timestamp timestamp
      *
@@ -201,7 +201,7 @@ abstract class UpdateTimeBase extends Model
     protected $int;
 
     /**
-     * 获取 int.
+     * get int.
      *
      * @return int
      */
@@ -211,7 +211,7 @@ abstract class UpdateTimeBase extends Model
     }
 
     /**
-     * 赋值 int.
+     * assignment int.
      *
      * @param int $int int
      *
@@ -234,7 +234,7 @@ abstract class UpdateTimeBase extends Model
     protected $bigint;
 
     /**
-     * 获取 bigint.
+     * get bigint.
      *
      * @return int
      */
@@ -244,7 +244,7 @@ abstract class UpdateTimeBase extends Model
     }
 
     /**
-     * 赋值 bigint.
+     * assignment bigint.
      *
      * @param int $bigint bigint
      *
@@ -267,7 +267,7 @@ abstract class UpdateTimeBase extends Model
     protected $year;
 
     /**
-     * 获取 year.
+     * get year.
      *
      * @return int
      */
@@ -277,7 +277,7 @@ abstract class UpdateTimeBase extends Model
     }
 
     /**
-     * 赋值 year.
+     * assignment year.
      *
      * @param int $year year
      *

@@ -9,7 +9,7 @@ use Imi\Model\Annotation\Table;
 use Imi\Model\Model as Model;
 
 /**
- * tb_article 基类.
+ * tb_article Base Class.
  *
  * @Entity
  * @Table(name="tb_article", id={"id"})
@@ -32,7 +32,7 @@ abstract class ArticleBase extends Model
     protected $id;
 
     /**
-     * 获取 id.
+     * get id.
      *
      * @return int
      */
@@ -42,7 +42,7 @@ abstract class ArticleBase extends Model
     }
 
     /**
-     * 赋值 id.
+     * assignment id.
      *
      * @param int $id id
      *
@@ -65,7 +65,7 @@ abstract class ArticleBase extends Model
     protected $title;
 
     /**
-     * 获取 title.
+     * get title.
      *
      * @return string
      */
@@ -75,7 +75,7 @@ abstract class ArticleBase extends Model
     }
 
     /**
-     * 赋值 title.
+     * assignment title.
      *
      * @param string $title title
      *
@@ -102,7 +102,7 @@ abstract class ArticleBase extends Model
     protected $content;
 
     /**
-     * 获取 content.
+     * get content.
      *
      * @return string
      */
@@ -112,7 +112,7 @@ abstract class ArticleBase extends Model
     }
 
     /**
-     * 赋值 content.
+     * assignment content.
      *
      * @param string $content content
      *
@@ -139,7 +139,7 @@ abstract class ArticleBase extends Model
     protected $time;
 
     /**
-     * 获取 time.
+     * get time.
      *
      * @return string
      */
@@ -149,7 +149,7 @@ abstract class ArticleBase extends Model
     }
 
     /**
-     * 赋值 time.
+     * assignment time.
      *
      * @param string $time time
      *

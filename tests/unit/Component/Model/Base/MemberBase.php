@@ -9,15 +9,15 @@ use Imi\Model\Annotation\Table;
 use Imi\Model\Model as Model;
 
 /**
- * tb_member 基类.
+ * tb_member Base Class.
  *
  * @Entity
  * @Table(name="tb_member", id={"id"})
- * @DDL("CREATE TABLE `tb_member` (   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,   `username` varchar(32) NOT NULL COMMENT '用户名',   `password` varchar(255) NOT NULL COMMENT '密码',   PRIMARY KEY (`id`) USING BTREE ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT")
+ * @DDL("CREATE TABLE `tb_member` (   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,   `username` varchar(32) NOT NULL COMMENT 'USERNAME',   `password` varchar(255) NOT NULL COMMENT 'PASSWORD',   PRIMARY KEY (`id`) USING BTREE ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT")
  *
  * @property int    $id
- * @property string $username 用户名
- * @property string $password 密码
+ * @property string $username username
+ * @property string $password password
  */
 abstract class MemberBase extends Model
 {
@@ -31,7 +31,7 @@ abstract class MemberBase extends Model
     protected $id;
 
     /**
-     * 获取 id.
+     * get id.
      *
      * @return int
      */
@@ -41,7 +41,7 @@ abstract class MemberBase extends Model
     }
 
     /**
-     * 赋值 id.
+     * assignment id.
      *
      * @param int $id id
      *
@@ -55,7 +55,7 @@ abstract class MemberBase extends Model
     }
 
     /**
-     * 用户名
+     * 
      * username.
      *
      * @Column(name="username", type="varchar", length=32, accuracy=0, nullable=false, default="", isPrimaryKey=false, primaryKeyIndex=-1, isAutoIncrement=false)
@@ -65,7 +65,7 @@ abstract class MemberBase extends Model
     protected $username;
 
     /**
-     * 获取 username - 用户名.
+     * get username.
      *
      * @return string
      */
@@ -75,7 +75,7 @@ abstract class MemberBase extends Model
     }
 
     /**
-     * 赋值 username - 用户名.
+     * assignment username.
      *
      * @param string $username username
      *
@@ -93,7 +93,7 @@ abstract class MemberBase extends Model
     }
 
     /**
-     * 密码
+     * 
      * password.
      *
      * @Column(name="password", type="varchar", length=255, accuracy=0, nullable=false, default="", isPrimaryKey=false, primaryKeyIndex=-1, isAutoIncrement=false)
@@ -103,7 +103,7 @@ abstract class MemberBase extends Model
     protected $password;
 
     /**
-     * 获取 password - 密码
+     * get password
      *
      * @return string
      */
@@ -113,7 +113,7 @@ abstract class MemberBase extends Model
     }
 
     /**
-     * 赋值 password - 密码
+     * assignment password
      *
      * @param string $password password
      *

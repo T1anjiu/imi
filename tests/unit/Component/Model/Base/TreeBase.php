@@ -9,7 +9,7 @@ use Imi\Model\Annotation\Table;
 use Imi\Model\Model as Model;
 
 /**
- * tb_tree 基类.
+ * tb_tree Base Class.
  *
  * @Entity
  * @Table(name="tb_tree", id={"id"})
@@ -31,7 +31,7 @@ abstract class TreeBase extends Model
     protected $id;
 
     /**
-     * 获取 id.
+     * get id.
      *
      * @return int
      */
@@ -41,7 +41,7 @@ abstract class TreeBase extends Model
     }
 
     /**
-     * 赋值 id.
+     * assignment id.
      *
      * @param int $id id
      *
@@ -64,7 +64,7 @@ abstract class TreeBase extends Model
     protected $parentId;
 
     /**
-     * 获取 parentId.
+     * get parentId.
      *
      * @return int
      */
@@ -74,7 +74,7 @@ abstract class TreeBase extends Model
     }
 
     /**
-     * 赋值 parentId.
+     * assignment parentId.
      *
      * @param int $parentId parent_id
      *
@@ -97,7 +97,7 @@ abstract class TreeBase extends Model
     protected $name;
 
     /**
-     * 获取 name.
+     * get name.
      *
      * @return string
      */
@@ -107,7 +107,7 @@ abstract class TreeBase extends Model
     }
 
     /**
-     * 赋值 name.
+     * assignment name.
      *
      * @param string $name name
      *

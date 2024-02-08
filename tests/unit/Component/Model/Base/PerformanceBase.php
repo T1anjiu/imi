@@ -9,7 +9,7 @@ use Imi\Model\Annotation\Table;
 use Imi\Model\Model as Model;
 
 /**
- * tb_performance 基类.
+ * tb_performance Base Class.
  *
  * @Entity
  * @Table(name="tb_performance", id={"id"})
@@ -30,7 +30,7 @@ abstract class PerformanceBase extends Model
     protected $id;
 
     /**
-     * 获取 id.
+     * get id.
      *
      * @return int
      */
@@ -40,7 +40,7 @@ abstract class PerformanceBase extends Model
     }
 
     /**
-     * 赋值 id.
+     * assignment id.
      *
      * @param int $id id
      *
@@ -63,7 +63,7 @@ abstract class PerformanceBase extends Model
     protected $value;
 
     /**
-     * 获取 value.
+     * get value.
      *
      * @return string
      */
@@ -73,7 +73,7 @@ abstract class PerformanceBase extends Model
     }
 
     /**
-     * 赋值 value.
+     * assignment value.
      *
      * @param string $value value
      *

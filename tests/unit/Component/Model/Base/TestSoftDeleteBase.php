@@ -9,7 +9,7 @@ use Imi\Model\Annotation\Table;
 use Imi\Model\Model as Model;
 
 /**
- * tb_test_soft_delete 基类.
+ * tb_test_soft_delete Base Class.
  *
  * @Entity
  * @Table(name="tb_test_soft_delete", id={"id"})
@@ -31,7 +31,7 @@ abstract class TestSoftDeleteBase extends Model
     protected $id;
 
     /**
-     * 获取 id.
+     * get id.
      *
      * @return int
      */
@@ -41,7 +41,7 @@ abstract class TestSoftDeleteBase extends Model
     }
 
     /**
-     * 赋值 id.
+     * assignment id.
      *
      * @param int $id id
      *
@@ -64,7 +64,7 @@ abstract class TestSoftDeleteBase extends Model
     protected $title;
 
     /**
-     * 获取 title.
+     * get title.
      *
      * @return string
      */
@@ -74,7 +74,7 @@ abstract class TestSoftDeleteBase extends Model
     }
 
     /**
-     * 赋值 title.
+     * assignment title.
      *
      * @param string $title title
      *
@@ -101,7 +101,7 @@ abstract class TestSoftDeleteBase extends Model
     protected $deleteTime;
 
     /**
-     * 获取 deleteTime.
+     * get deleteTime.
      *
      * @return int
      */
@@ -111,7 +111,7 @@ abstract class TestSoftDeleteBase extends Model
     }
 
     /**
-     * 赋值 deleteTime.
+     * assignment deleteTime.
      *
      * @param int $deleteTime delete_time
      *
