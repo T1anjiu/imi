@@ -1,0 +1,12 @@
+vendor
+/composer.lock
+/ide-helper
+.runtime
+*.log
+.session
+/.idea
+*.cache
+/mddoc/vendor
+*.lock
+/src/Components/*/vendor
+/split-repository/vendor
