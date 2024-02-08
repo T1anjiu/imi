@@ -1,569 +1,572 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <!-- 模板 by lovefc 祝IMIPHP越来越好，干杯！ -->
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>imi框架官网 - 基于Swoole的PHP协程开发框架|PHP框架|Swoole框架</title>
-        <meta name="keywords" content="imi,imi框架,php框架,swoole,swoole框架,php协程框架,php异步框架" />
-        <meta name="description" content="imi是基于Swoole的PHP协程开发框架，高性能，功能强大，开发方便！支持 Http、Http2、WebSocket、TCP、UDP、MQTT 应用开发。由 Swoole 提供强力驱动，Swoole 拥有常驻内存、协程非阻塞 IO 等特性。" />
-        <link rel="shortcut icon" href="favicon.ico">
-        <link href="css/uikit.min.css" type="text/css" rel="stylesheet">
-        <link href="css/site.css" type="text/css" rel="stylesheet">
-        <!-- 字体图标 -->
-        <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-        <script src="https://cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
-        <script src="js/uikit.min.js" type="text/javascript"></script>
-        <!-- 组件加载 -->
-        <link href="css/components/sticky.css" type="text/css" rel="stylesheet">
-        <script src="js/components/sticky.js" type="text/javascript"></script>
-    </head>
-    <body>
-        <div data-uk-sticky="{boundary: 'true'}">
-            <section class="site-header uk-position-relative">
-                <div class="uk-navbar">
-                    <div class="uk-container uk-container-center">
-                        <a class="uk-navbar-brand" href="/">
-                            <img class="uk-margin-small-right" src="images/logo-icon.png" alt="imi 框架 Logo" width="30" />
-                        </a>
-                        <div class="uk-navbar-flip">
-                            <div class="uk-navbar-content uk-hidden-small">
-                            </div>
-                        </div>
-                        <div class="uk-navbar-center uk-hidden-small">
-                            <ul class="uk-navbar-nav" data-level="0">
-                                <li>
-                                    <a href="https://doc.imiphp.com" target="_blank">imi 文档</a>
-                                </li>
-                                <li>
-                                    <a href="https://github.com/imiphp/imi" target="_blank" rel="nofollow">Github</a>
-                                </li>
-                                <li>
-                                    <a href="https://gitee.com/yurunsoft/IMI" target="_blank" rel="nofollow">Gitee</a>
-                                </li>
-                                <li>
-                                    <a href="https://blog.yurunsoft.com" target="_blank">博客</a>
-                                </li>
-                                <li>
-                                    <a href="#modal" data-uk-modal="{center:true}">捐赠</a>
-                                </li>
-                            </ul>
+
+<head>
+    <!-- Template by lovefc, wish IMIPHP better and better, cheers! -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>imi Framework Official Website - PHP Coroutine Development Framework Based on Swoole | PHP Framework | Swoole Framework</title>
+    <meta name="keywords" content="imi, imi framework, php framework, swoole, swoole framework, php coroutine framework, php asynchronous framework" />
+    <meta name="description" content="imi is a PHP coroutine development framework based on Swoole, high performance, powerful functionality, easy development! It supports Http, Http2, WebSocket, TCP, UDP, MQTT application development. Powered by Swoole, Swoole features resident memory, coroutine non-blocking IO, etc."
+    />
+    <link rel="shortcut icon" href="favicon.ico">
+    <link href="css/uikit.min.css" type="text/css" rel="stylesheet">
+    <link href="css/site.css" type="text/css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+    <script src="js/uikit.min.js" type="text/javascript"></script>
+    <!-- Component Loading -->
+    <link href="css/components/sticky.css" type="text/css" rel="stylesheet">
+    <script src="js/components/sticky.js" type="text/javascript"></script>
+</head>
+
+<body>
+    <div data-uk-sticky="{boundary: 'true'}">
+        <section class="site-header uk-position-relative">
+            <div class="uk-navbar">
+                <div class="uk-container uk-container-center">
+                    <a class="uk-navbar-brand" href="/">
+                        <img class="uk-margin-small-right" src="images/logo-icon.png" alt="imi Framework Logo" width="30" />
+                    </a>
+                    <div class="uk-navbar-flip">
+                        <div class="uk-navbar-content uk-hidden-small">
                         </div>
                     </div>
+                    <div class="uk-navbar-center uk-hidden-small">
+                        <ul class="uk-navbar-nav" data-level="0">
+                            <li>
+                                <a href="https://doc.imiphp.com" target="_blank">imi Documentation</a>
+                            </li>
+                            <li>
+                                <a href="https://github.com/imiphp/imi" target="_blank" rel="nofollow">Github</a>
+                            </li>
+                            <li>
+                                <a href="https://gitee.com/yurunsoft/IMI" target="_blank" rel="nofollow">Gitee</a>
+                            </li>
+                            <li>
+                                <a href="https://blog.yurunsoft.com" target="_blank">Blog</a>
+                            </li>
+                            <li>
+                                <a href="#modal" data-uk-modal="{center:true}">Donation</a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-            </section>
+            </div>
+        </section>
+    </div>
+    <main class="site-main uk-margin-large-top">
+        <div class="uk-block uk-text-center uk-text-lighter">
+            <div class="uk-container uk-container-center">
+                <p>
+                    <img src="images/logo-icon.png" alt="imi Framework Logo" />
+                </p>
+                <h1>imi Framework — PHP Coroutine Development Framework Based on Swoole</h1>
+                <p class="uk-h2 uk-text-muted">
+                    High performance, powerful functionality, stable operation, easy development
+                </p>
+                <p>
+                    Supports Http, Http2, WebSocket, TCP, UDP, MQTT, and other mainstream protocol service development
+                    <br/>Especially suitable for Internet microservices, instant messaging chat im, Internet of Things, and other scenarios!
+                </p>
+                <p>
+                    <code>imi was initiated and released its first version in 2018</code>
+                </p>
+            </div>
         </div>
-        <main class="site-main uk-margin-large-top">
-            <div class="uk-block uk-text-center uk-text-lighter">
-                <div class="uk-container uk-container-center">
-                    <p>
-                        <img src="images/logo-icon.png" alt="imi 框架 Logo"/>
-                    </p>
-                    <h1>imi 框架——基于Swoole的PHP协程开发框架</h1>
-                    <p class="uk-h2 uk-text-muted">
-                        高性能，功能强大，运行稳定，开发方便
-                    </p>
-                        <p>
-                            支持 Http、Http2、WebSocket、TCP、UDP、MQTT 等主流协议的服务开发<br/>特别适合互联网微服务、即时通讯聊天im、物联网等场景！
-                        </p>
-                        <p>
-                            <code>imi 于 2018 年立项并发布了第一个版本</code>
-                        </p>
+        <div class="uk-text-center">
+            <div class="uk-container uk-container-center" style="margin-top:-2vh;">
+                <div class="repo">
+                    <a href="https://github.com/imiphp/imi" class="repo-button" target="_blank" rel="nofollow"><img src="images/github.ico" />Github</a>
+                    <a href="https://gitee.com/yurunsoft/IMI" class="repo-button" target="_blank" rel="nofollow"><img src="images/gitee.png" />Gitee</a>
+                    <a href="https://doc.imiphp.com" class="repo-button" target="_blank"><img src="images/logo-icon.png" />imi Development Manual</a>
+                </div>
+                <div class="uk-block uk-grid uk-flex-center" style="padding-bottom: 0;">
+                    <div>PHP >= 7.1</div>
+                    <div>Composer</div>
+                    <div>Swoole >= 4.4.0</div>
+                    <div>Redis, PDO</div>
+                </div>
+                <h2>imi Introductory Video Tutorial (Free 11 Episodes Full)</h2>
+                <div class="repo">
+                    <a href="https://www.bilibili.com/video/BV1VJ411i7K5" class="repo-button" target="_blank" rel="nofollow"><img src="images/bilibili.png" />Bilibili</a>
+                    <a href="https://course.swoole-cloud.com/" class="repo-button" target="_blank" rel="nofollow"><img src="images/weikecheng.ico" />Swoole Microcourse</a>
+                    <a href="http://www.yzmedu.com/course/438" class="repo-button" target="_blank" rel="nofollow"><img src="images/yunzhimeng.ico" />Cloud Dream</a>
+                </div>
+                <h2>imi Advanced Tutorial — Gobang Game Development (Free 7 Episodes Full)</h2>
+                <div class="repo">
+                    <a href="https://space.bilibili.com/768718/channel/detail?cid=136926" class="repo-button" target="_blank" rel="nofollow"><img src="images/bilibili.png" />Bilibili</a>
+                    <a href="https://github.com/yurunsoft/imi-gobang" class="repo-button" target="_blank" rel="nofollow"><img src="images/github.ico" />Gobang Complete Source Code Download</a>
+                </div>
+                <br/>
+                <div>Want to know more about QQ group? Group number: 17916227, or click here👉
+                    <a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=d798f9763a255582caeec0608ab1eaf2b42a6230afea7a45a2cf462822484bd6" rel="nofollow"><img border="0" src="//pub.idqqimg.com/wpa/images/group.png" alt="Yurun PHP Component Full Family Bucket &amp; S" title="Yurun PHP Component Full Family Bucket &amp; S"></a>
+                </div>
+                <br/>
+            </div>
+        </div>
+        <div class="uk-text-center">
+            <div class="uk-container uk-container-center">
+                <h2>Quickly Create imi Projects</h2>
+                <div class="create-project">
+                    <table>
+                        <tr>
+                            <th>Http Server</th>
+                            <td><code>composer create-project imiphp/project-http</code></td>
+                        </tr>
+                        <tr>
+                            <th>WebSocket Server</th>
+                            <td><code>composer create-project imiphp/project-websocket</code></td>
+                        </tr>
+                        <tr>
+                            <th>TCP Server</th>
+                            <td><code>composer create-project imiphp/project-tcp</code></td>
+                        </tr>
+                        <tr>
+                            <th>UDP Server</th>
+                            <td><code>composer create-project imiphp/project-udp</code></td>
+                        </tr>
+                        <tr>
+                            <th>MQTT Server</th>
+                            <td><code>composer create-project imiphp/project-mqtt</code></td>
+                        </tr>
+                    </table>
                 </div>
             </div>
-            <div class="uk-text-center">
-                <div class="uk-container uk-container-center" style="margin-top:-2vh;">
-                    <div class="repo">
-                        <a href="https://github.com/imiphp/imi" class="repo-button" target="_blank" rel="nofollow"><img src="images/github.ico"/>Github</a>
-                        <a href="https://gitee.com/yurunsoft/IMI" class="repo-button" target="_blank" rel="nofollow"><img src="images/gitee.png"/>Gitee</a>
-                        <a href="https://doc.imiphp.com" class="repo-button" target="_blank"><img src="images/logo-icon.png"/>imi 开发手册</a>
+            <div class="uk-container uk-container-center" style="padding-bottom: 20px;">
+                <h2>imi Features</h2>
+                <div class="uk-grid uk-grid-match uk-grid-width-medium-1-3 uk-margin-large-top" data-uk-grid-margin>
+                    <div class="uk-flex-order-last-small uk-flex-order-first-medium">
+                        <div class="uk-panel uk-panel-space uk-panel-box">
+                            <h3 class="uk-text-bolder">Resident Memory</h3>
+                            <p class="uk-text-muted">As a Swoole framework, it can avoid the performance loss caused by repeated loading, improving efficiency.</p>
+                        </div>
                     </div>
-                    <div class="uk-block uk-grid uk-flex-center" style="padding-bottom: 0;">
-                        <div>PHP >= 7.1</div>
-                        <div>Composer</div>
-                        <div>Swoole >= 4.4.0</div>
-                        <div>Redis、PDO</div>
+                    <div class="">
+                        <div class="uk-panel uk-panel-space uk-panel-box">
+                            <h3 class="uk-text-bolder">Coroutine Asynchronous</h3>
+                            <p class="uk-text-muted">Enhances concurrent processing capability for I/O-intensive scenarios like database queries.</p>
+                        </div>
                     </div>
-                    <h2>imi 入门视频教程(免费11集全)</h2>
-                    <div class="repo">
-                        <a href="https://www.bilibili.com/video/BV1VJ411i7K5" class="repo-button" target="_blank" rel="nofollow"><img src="images/bilibili.png"/>哔哩哔哩</a>
-                        <a href="https://course.swoole-cloud.com/" class="repo-button" target="_blank" rel="nofollow"><img src="images/weikecheng.ico"/>Swoole 微课程</a>
-                        <a href="http://www.yzmedu.com/course/438" class="repo-button" target="_blank" rel="nofollow"><img src="images/yunzhimeng.ico"/>云知梦</a>
+                    <div>
+                        <div class="uk-panel uk-panel-space uk-panel-box">
+                            <h3 class="uk-text-bolder">Millisecond-level Hot Reload Restart</h3>
+                            <p class="uk-text-muted">imi offers the same development efficiency as traditional PHP frameworks, with changes visible upon saving, providing a development experience indistinguishable from FPM.</p>
+                        </div>
                     </div>
-                    <h2>imi 进阶教程——五子棋游戏开发(免费7集全)</h2>
-                    <div class="repo">
-                        <a href="https://space.bilibili.com/768718/channel/detail?cid=136926" class="repo-button" target="_blank" rel="nofollow"><img src="images/bilibili.png"/>哔哩哔哩</a>
-                        <a href="https://github.com/yurunsoft/imi-gobang" class="repo-button" target="_blank" rel="nofollow"><img src="images/github.ico"/>五子棋完整源码下载</a>
-                    </div>
-                    <br/>
-                    <div>QQ群了解一下？群号：17916227，或者戳这里👉<a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=d798f9763a255582caeec0608ab1eaf2b42a6230afea7a45a2cf462822484bd6" rel="nofollow"><img border="0" src="//pub.idqqimg.com/wpa/images/group.png" alt="宇润 PHP 组件全家桶 &amp; S" title="宇润 PHP 组件全家桶 &amp; S"></a></div>
-                    <br />
                 </div>
             </div>
-            <div class="uk-text-center">
-                <div class="uk-container uk-container-center">
-                    <h2>快速创建 imi 项目</h2>
-                    <div class="create-project">
-                        <table>
-                            <tr>
-                                <th>Http Server</th>
-                                <td><code>composer create-project imiphp/project-http</code></td>
-                            </tr>
-                            <tr>
-                                <th>WebSocket Server</th>
-                                <td><code>composer create-project imiphp/project-websocket</code></td>
-                            </tr>
-                            <tr>
-                                <th>TCP Server</th>
-                                <td><code>composer create-project imiphp/project-tcp</code></td>
-                            </tr>
-                            <tr>
-                                <th>UDP Server</th>
-                                <td><code>composer create-project imiphp/project-udp</code></td>
-                            </tr>
-                            <tr>
-                                <th>MQTT Server</th>
-                                <td><code>composer create-project imiphp/project-mqtt</code></td>
-                            </tr>
-                        </table>
+        </div>
+        <div class="uk-block uk-block-muted uk-text-center">
+            <div class="uk-container uk-container-center">
+                <p class="uk-text-bold uk-text-large">imi Framework Feature Components</p>
+                <p class="uk-text-muted">What's the best Swoole framework? It's imi, of course!</p>
+                <div class="uk-width-medium-1-2 uk-container-center">
+                    <div class="uk-grid uk-grid-width-1-2 uk-grid-width-medium-1-3 uk-flex-middle uk-flex-center uk-text-center" data-uk-grid-margin>
+                        <style>
+                            .component {
+                                width: 250px;
+                                margin: 2px;
+                                font-size: 0.85em;
+                            }
+                        </style>
+                        <div class="uk-button component">
+                            Http Server
+                        </div>
+                        <div class="uk-button component">
+                            Http2 Server
+                        </div>
+                        <div class="uk-button component">
+                            Websocket Server
+                        </div>
+                        <div class="uk-button component">
+                            Tcp Server
+                        </div>
+                        <div class="uk-button component">
+                            Udp Server
+                        </div>
+                        <div class="uk-button component">
+                            MQTT Server
+                        </div>
+                        <div class="uk-button component">
+                            Container (PSR-11)
+                        </div>
+                        <div class="uk-button component">
+                            Aop Injection
+                        </div>
+                        <div class="uk-button component">
+                            Http Middleware (PSR-15)
+                        </div>
+                        <div class="uk-button component">
+                            MySQL Connection Pool (Master-Slave + Load Balancing)
+                        </div>
+                        <div class="uk-button component">
+                            Redis Connection Pool (Load Balancing)
+                        </div>
+                        <div class="uk-button component">
+                            Db Fluent Operation
+                        </div>
+                        <div class="uk-button component">
+                            ORM Fluent Operation
+                        </div>
+                        <div class="uk-button component">
+                            MemoryTable Model
+                        </div>
+                        <div class="uk-button component">
+                            Validator (Validation)
+                        </div>
+                        <div class="uk-button component">
+                            Logging (PSR-3)
+                        </div>
+                        <div class="uk-button component">
+                            Cache (PSR-16)
+                        </div>
+                        <div class="uk-button component">
+                            Redis Model
+                        </div>
+                        <div class="uk-button component">
+                            Task Asynchronous Task
+                        </div>
+                        <div class="uk-button component">
+                            Process/Process Pool
+                        </div>
+                        <div class="uk-button component">
+                            Command Line Development Assistant Tools
+                        </div>
+                        <div class="uk-button component">
+                            <i class="fa fa-thumbs-o-up"></i> Millisecond-level Hot Reload of Annotations and Code
+                        </div>
                     </div>
                 </div>
-                <div class="uk-container uk-container-center" style="padding-bottom: 20px;">
-                    <h2>imi 功能特点</h2>
-                    <div class="uk-grid uk-grid-match uk-grid-width-medium-1-3 uk-margin-large-top" data-uk-grid-margin>
-                        <div class="uk-flex-order-last-small uk-flex-order-first-medium">
-                            <div class="uk-panel uk-panel-space uk-panel-box">
-                                <h3 class="uk-text-bolder">常驻内存</h3>
-                                <p class="uk-text-muted">作为 Swoole 框架，能够避免重复加载带来的性能损耗，提升性能</p>
+            </div>
+        </div>
+        <div id="anli" class="uk-block uk-block-secondary uk-nbfc">
+            <div class="uk-container uk-container-center uk-position-relative uk-text-center">
+                <h2 class="uk-h1">Success Stories</h2>
+                <div class="uk-text-muted uk-margin-small-bottom">Some projects developed using the imi framework <a href="https://github.com/imiphp/imi/issues/new" target="_blank" rel="nofollow">👆Submit a Case</a></div>
+                <div class="uk-grid uk-grid-match uk-grid-width-medium-3-3" data-uk-grid-margin>
+                    <div class="uk-flex-order-last-small uk-flex-order-first-medium">
+                        <div class="uk-panel uk-panel-box">
+                            <h3 class="uk-text-bolder"><a href="http://www.kangedan.com/" target="_blank">Watch an Egg Movie Search - All-network Movie Resource Search Platform</a></h3>
+                            <p class="uk-text-center"><img src="images/anli/kangedan.jpg" /></p>
+                            <div class="uk-text-left">
+                                <p><b>Project Introduction:</b> The earliest intention of building a website was for personal convenience! When the traffic increased over time, it was necessary to consider upgrading the configuration or refactoring the project.
+                                    A few days ago, I saw imiphp on Git and decided to try it out. I simply refactored all the pages and introduced the TP's think-template template engine. The entire refactoring took less than a day, so imiphp is indeed
+                                    very easy to get started with! Keep it up!</p>
                             </div>
                         </div>
-                        <div class="">
-                            <div class="uk-panel uk-panel-space uk-panel-box">
-                                <h3 class="uk-text-bolder">协程异步</h3>
-                                <p class="uk-text-muted">
-                                    提高对数据库查询等 I/O 密集型场景并发处理能力
+                    </div>
+                    <div class="uk-flex-order-last-small uk-flex-order-first-medium">
+                        <div class="uk-panel uk-panel-box">
+                            <h3 class="uk-text-bolder">Hupu - Data Migration Service for Billions of Data</h3>
+                            <p class="uk-text-center"><img src="images/anli/hupu.jpg" /></p>
+                            <div class="uk-text-left">
+                                <p><b>Project Introduction:</b> As the data scale grows, MySQL is no longer suitable for multidimensional queries of big data, and search engines like ES are needed for multidimensional word segmentation queries. At the current
+                                    stage, MySQL uses daily partitioned storage and cannot meet long-term queries across days.</p>
+                                <p>
+                                    How to complete data migration as quickly as possible and migrate data from the database to ES is an important technical point that needs to be evaluated.
+                                </p>
+                                <p>
+                                    In a high IO-intensive scenario, a single request takes 80 milliseconds. imi uses Swoole coroutines to switch between user space and kernel space, fully utilizing the computer CPU, thereby completing massive data migration quickly.
+                                </p>
+                                <p>
+                                    According to Prometheus monitoring statistics, on two 2C 4G machines, imi synchronizes at a rate of 1000 to 1500 records per second, completing data migration of billions of records.
+                                </p>
+                                <p>
+                                    Blog Post: <a href="https://blog.csdn.net/qq_32783703/article/details/113576741" target="_blank">https://blog.csdn.net/qq_32783703/article/details/113576741</a>
                                 </p>
                             </div>
                         </div>
-                        <div>
-                            <div class="uk-panel uk-panel-space uk-panel-box">
-                                <h3 class="uk-text-bolder">毫秒级热更新重启</h3>
-                                <p class="uk-text-muted">imi 拥有与传统 PHP 框架一样的开发效率，保存即看效果，开发体验与 fpm 无差别</p>
+                        <div class="uk-panel uk-panel-box">
+                            <h3 class="uk-text-bolder"><a href="https://api.oioweb.cn" target="_blank">Teacher API - Provides Free Interface Call Platform</a></h3>
+                            <p class="uk-text-center"><img src="images/anli/jsxsapi.png" /></p>
+                            <div class="uk-text-left">
+                                <p><b>Project Introduction:</b> Teacher API provides free API data interface call service platform - we are committed to providing users with stable and fast free API data interface services.</p>
+                                <p><b>Comment:</b></p>
+                                <p>
+                                    Before, the server configuration was 8H8G 30M, with a daily traffic of over 3 million requests. Once, a certain interface would cause the server to crash directly due to an error. I accidentally found the imi project of the group owner (Yurun) when searching,
+                                    so I stayed up late to replace the core code of the program with imi. Fortunately, I had a server with a configuration of 1H2G 5M, and after testing, with Redis, there were no problems with 2 to 3 million requests.
+                                    Finally, I would like to thank Yurun for his open source project.
+                                </p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="uk-block uk-block-muted uk-text-center">
-                <div class="uk-container uk-container-center">
-                    <p class="uk-text-bold uk-text-large">imi 框架功能组件</p>
-                    <p class="uk-text-muted">什么是最好的 Swoole 框架啊？当然是 imi ！</p>
-                    <div class="uk-width-medium-1-2 uk-container-center">
-                        <div class="uk-grid uk-grid-width-1-2 uk-grid-width-medium-1-3 uk-flex-middle uk-flex-center uk-text-center"
-                            data-uk-grid-margin>
-                            <style>
-                                .component {
-                                    width: 250px;
-                                    margin: 2px;
-                                    font-size: 0.85em;
-                                }
-                            </style>
-                            <div class="uk-button component">
-                                Http Server
-                            </div>
-                            <div class="uk-button component">
-                                Http2 Server
-                            </div>
-                            <div class="uk-button component">
-                                Websocket Server
-                            </div>
-                            <div class="uk-button component">
-                                Tcp Server
-                            </div>
-                            <div class="uk-button component">
-                                Udp Server
-                            </div>
-                            <div class="uk-button component">
-                                MQTT Server
-                            </div>
-                            <div class="uk-button component">
-                                容器 (PSR-11)
-                            </div>
-                            <div class="uk-button component">
-                                Aop 注入
-                            </div>
-                            <div class="uk-button component">
-                                Http 中间件 (PSR-15)
-                            </div>
-                            <div class="uk-button component">
-                                MySQL 连接池（主从+负均）
-                            </div>
-                            <div class="uk-button component">
-                                Redis 连接池（负载均衡）
-                            </div>
-                            <div class="uk-button component">
-                                Db 连贯操作
-                            </div>
-                            <div class="uk-button component">
-                                ORM 连贯操作
-                            </div>
-                            <div class="uk-button component">
-                                MemoryTable Model
-                            </div>
-                            <div class="uk-button component">
-                                验证器 (Validation)
-                            </div>
-                            <div class="uk-button component">
-                                日志 (PSR-3)
-                            </div>
-                            <div class="uk-button component">
-                                缓存 (PSR-16)
-                            </div>
-                            <div class="uk-button component">
-                                Redis 模型
-                            </div>
-                            <div class="uk-button component">
-                                Task 异步任务
-                            </div>
-                            <div class="uk-button component">
-                                进程/进程池
-                            </div>
-                            <div class="uk-button component">
-                                命令行开发辅助工具
-                            </div>
-                            <div class="uk-button component">
-                                <i class="fa fa-thumbs-o-up"></i>
-                                注解和代码的毫秒级热更新
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div id="anli" class="uk-block uk-block-secondary uk-nbfc">
-                <div class="uk-container uk-container-center uk-position-relative uk-text-center">
-                    <h2 class="uk-h1">成功案例</h2>
-                    <div class="uk-text-muted uk-margin-small-bottom">使用 imi 框架开发的部分项目展示 <a href="https://github.com/imiphp/imi/issues/new" target="_blank" rel="nofollow">👆提交案例</a></div>
-                    <div class="uk-grid uk-grid-match uk-grid-width-medium-3-3" data-uk-grid-margin>
-                        <div class="uk-flex-order-last-small uk-flex-order-first-medium">
-                            <div class="uk-panel uk-panel-box">
-                                <h3 class="uk-text-bolder"><a href="http://www.kangedan.com/" target="_blank">看个蛋影视搜索 - 全网影视资源搜索平台</a></h3>
-                                <p class="uk-text-center"><img src="images/anli/kangedan.jpg"/></p>
-                                <div class="uk-text-left">
-                                    <p><b>项目介绍：</b>从最早的建站初心是为了自己方便！放到网络的以来，当流量越来越大的时候是要考虑升级配置还是重构项目，前几天 git 上看到 imiphp，索性就拿来实践一下，也是简单就重构出了所有页面，模版引擎引入了 TP 的 think-template，整个重构也就一天不到，所以 imiphp 确实很容易上手！加油！</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="uk-flex-order-last-small uk-flex-order-first-medium">
-                            <div class="uk-panel uk-panel-box">
-                                <h3 class="uk-text-bolder">虎扑 - 上亿数据迁移服务</h3>
-                                <p class="uk-text-center"><img src="images/anli/hupu.jpg"/></p>
-                                <div class="uk-text-left">
-                                    <p><b>项目介绍：</b>随着数据规模的越来越大，mysql已经不能适用大数据多维度的查询，需要用ES等一类的搜索引擎，进行多维度的分词查询，MYSQL现阶段使用按天分表存储，不能满足跨天的长时间查询。</p>
-                                    <p>
-                                        如何以最快的速度完成数据迁移，将数据库中的数据迁移到ES中，是需要评估的一个重要技术点。
-                                    </p>
-                                    <p>
-                                        在高IO密集的场景下，单次请求需要80毫秒，imi运用Swoole协程，不断在用户态和内核态之间进行切换，充分利用计算机CPU，从而能快速完成海量数据迁移。
-                                    </p>
-                                    <p>
-                                        根据普罗米修斯的监控统计，在 两台 2C 4G的机器上，imi以每秒钟同步1000~1500条的同步速度，完成了上亿级别的数据迁移。
-                                    </p>
-                                    <p>
-                                        博文地址：<a href="https://blog.csdn.net/qq_32783703/article/details/113576741" target="_blank">https://blog.csdn.net/qq_32783703/article/details/113576741</a>
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="uk-panel uk-panel-box">
-                                <h3 class="uk-text-bolder"><a href="https://api.oioweb.cn" target="_blank">教书先生API - 提供免费接口调用平台</a></h3>
-                                <p class="uk-text-center"><img src="images/anli/jsxsapi.png"/></p>
-                                <div class="uk-text-left">
-                                    <p><b>项目介绍：</b>教书先生API是免费提供API数据接口调用服务平台 - 我们致力于为用户提供稳定、快速的免费API数据接口服务。</p>
-                                    <p><b>感言：</b></p>
-                                    <p>
-                                        之前的话服务器配置是8H8G 30M这样的一个配置，每天日300万+的一个请求量，有一次是某个接口因一个错误时不时会导致服务器直接宕机，一个偶然的搜索看到了群主（宇润）大佬的一个imi项目，于是熬夜给程序内部请求核心代码换上了imi，正好手里面有一台1H2G 5M的服务器，拿来测试了一下，配合Redis 200万-300万+一点问题都没有的，最后还是要感谢宇润大佬的开源项目。
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="uk-block uk-text-center">
-                <div class="uk-container uk-container-center">
-                    <div class="uk-panel-space uk-panel-shadow">
-                        <p class="uk-h1 uk-text-bold uk-margin-large-top">为开源贡献</p>
-                        <p class="uk-text-large uk-text-muted">imi 遵循 <a href="http://license.coscl.org.cn/MulanPSL/" target="_blank" rel="nofollow">木兰宽松许可证(Mulan PSL v1)</a> 开源协议发布，并提供免费使用
-                        </p>
-                        <p class="uk-margin-large">
-                            <a class="uk-button uk-button-large uk-button-outline uk-button-primary" href="#modal"
-                                data-uk-modal="{center:true}">我要捐赠</a>
-                            <a class="uk-button uk-button-large uk-button-outline uk-button-primary" href="#modal2"
-                                data-uk-modal="{center:true}">加入开发</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="uk-block uk-block-secondary uk-text-center uk-nbfc">
-                <div class="uk-container uk-container-center uk-position-relative uk-text-center">
-                    <h2 class="uk-h1">捐赠列表</h2>
-                    <div class="uk-text-muted">感谢各位对我的帮助，我会再接再厉</div>
-                    <table class="uk-table uk-table-hover">
-                        <thead>
-                            <th class="uk-text-center" style="width:10em">金额</th>
-                            <th class="uk-text-center" style="width:14em">捐赠者</th>
-                            <th class="uk-text-center">留言</th>
-                            <th class="uk-text-center" style="width:8em">渠道</th>
-                        </thead>
-                    </table>
-                    <div class="jz-table-box">
-                        <table class="uk-table uk-table-hover jz-table">
-                            <tbody>
-                                <tr>
-                                    <td style="width:10em">300.00</td>
-                                    <td style="width:14em"><a href="https://blog.csdn.net/qq_32783703" target="_blank" rel="nofollow">张磊</a></td>
-                                    <td></td>
-                                    <td style="width:6em"><span class="jz-alipay">支付宝</span></td>
-                                </tr>
-                                <tr>
-                                    <td>200</td>
-                                    <td>牛顿呀</td>
-                                    <td>imiphp 是永远的神</td>
-                                    <td><span class="jz-weixin">微信</span></td>
-                                </tr>
-                                <tr>
-                                    <td>105.21</td>
-                                    <td>EasySwoole 贡献者——仙士可</td>
-                                    <td></td>
-                                    <td><span class="jz-weixin">微信</span></td>
-                                </tr>
-                                <tr>
-                                    <td>100.00</td>
-                                    <td>*能</td>
-                                    <td></td>
-                                    <td><span class="jz-alipay">支付宝</span></td>
-                                </tr>
-                                <tr>
-                                    <td>99.99</td>
-                                    <td>*宇</td>
-                                    <td>希望开源产品长长久久</td>
-                                    <td><span class="jz-weixin">微信</span></td>
-                                </tr>
-                                <tr>
-                                    <td>88.88</td>
-                                    <td><a href="https://www.dute.org" target="_blank" rel="nofollow">独特工具箱</a></td>
-                                    <td>支持开源，支持imiphp</td>
-                                    <td><span class="jz-weixin">微信</span></td>
-                                </tr>
-                                <tr>
-                                    <td>66.66</td>
-                                    <td>会的不多</td>
-                                    <td>宇润的PaySDK用的很6，感谢啊！</td>
-                                    <td><span class="jz-alipay">支付宝</span></td>
-                                </tr>
-                                <tr>
-                                    <td>66.66</td>
-                                    <td>*生</td>
-                                    <td></td>
-                                    <td><span class="jz-weixin">微信</span></td>
-                                </tr>
-                                <tr>
-                                    <td>20.00</td>
-                                    <td><a href="https://blog.yangyj.com/" target="_blank" rel="nofollow">yangyj</a></td>
-                                    <td></td>
-                                    <td><span class="jz-qq">QQ</span></td>
-                                </tr>
-                                <tr>
-                                    <td>19.90</td>
-                                    <td>*瑶</td>
-                                    <td></td>
-                                    <td><span class="jz-weixin">微信</span></td>
-                                </tr>
-                                <tr>
-                                    <td>16.66</td>
-                                    <td><a href="http://blog.mandian.vip/" target="_blank" rel="nofollow">慢点</a> (该博客使用 imi 开发)</td>
-                                    <td></td>
-                                    <td><span class="jz-weixin">微信</span></td>
-                                </tr>
-                                <tr>
-                                    <td>16.66</td>
-                                    <td>北*Q</td>
-                                    <td></td>
-                                    <td><span class="jz-weixin">微信</span></td>
-                                </tr>
-                                <tr>
-                                    <td>12.16</td>
-                                    <td>*森</td>
-                                    <td>支持开源项目/精神</td>
-                                    <td><span class="jz-weixin">微信</span></td>
-                                </tr>
-                                <tr>
-                                    <td>11.00</td>
-                                    <td>*健</td>
-                                    <td>大佬辛苦了</td>
-                                    <td><span class="jz-weixin">微信</span></td>
-                                </tr>
-                                <tr>
-                                    <td>10.00</td>
-                                    <td>*志伟</td>
-                                    <td>OneTake支持yurun开源</td>
-                                    <td><span class="jz-alipay">支付宝</span></td>
-                                </tr>
-                                <tr>
-                                    <td>10.00</td>
-                                    <td><a href="http://lovefc.cn/" target="_blank" rel="nofollow">封尘</a></td>
-                                    <td></td>
-                                    <td><span class="jz-alipay">支付宝</span></td>
-                                </tr>
-                                <tr>
-                                    <td>10.00</td>
-                                    <td>摄像头</td>
-                                    <td></td>
-                                    <td><span class="jz-alipay">支付宝</span></td>
-                                </tr>
-                                <tr>
-                                    <td>10.00</td>
-                                    <td><a href="http://www.yajiji.cc/" target="_blank" rel="nofollow">五十岚</a></td>
-                                    <td>感谢开源精神，感谢付出。</td>
-                                    <td><span class="jz-weixin">微信</span></td>
-                                </tr>
-                                <tr>
-                                    <td>10.00</td>
-                                    <td>J*U</td>
-                                    <td>支持开源，群主加油</td>
-                                    <td><span class="jz-weixin">微信</span></td>
-                                </tr>
-                                <tr>
-                                    <td>8.88</td>
-                                    <td>*愁</td>
-                                    <td></td>
-                                    <td><span class="jz-weixin">微信</span></td>
-                                </tr>
-                                <tr>
-                                    <td>6.66</td>
-                                    <td>Eleven</td>
-                                    <td></td>
-                                    <td><span class="jz-weixin">微信</span></td>
-                                </tr>
-                                <tr>
-                                    <td>6.66</td>
-                                    <td>J*w</td>
-                                    <td></td>
-                                    <td><span class="jz-weixin">微信</span></td>
-                                </tr>
-                                <tr>
-                                    <td>6.66</td>
-                                    <td>*兰胤</td>
-                                    <td>imi加油</td>
-                                    <td><span class="jz-alipay">支付宝</span></td>
-                                </tr>
-                                <tr>
-                                    <td>6.00</td>
-                                    <td>daxia</td>
-                                    <td></td>
-                                    <td><span class="jz-alipay">支付宝</span></td>
-                                </tr>
-                                <tr>
-                                    <td>3.88</td>
-                                    <td>努*n</td>
-                                    <td></td>
-                                    <td><span class="jz-weixin">微信</span></td>
-                                </tr>
-                                <tr>
-                                    <td>3.00</td>
-                                    <td>aLuckyfellow</td>
-                                    <td>支持 yurun开源</td>
-                                    <td><span class="jz-alipay">支付宝</span></td>
-                                </tr>
-                                <tr>
-                                    <td>1.00</td>
-                                    <td>*锐</td>
-                                    <td>我是swoole5群的似是而非，支持一下</td>
-                                    <td><span class="jz-alipay">支付宝</span></td>
-                                </tr>
-                                <tr>
-                                    <td>0.88</td>
-                                    <td>小公主</td>
-                                    <td>希望老哥多写点demo</td>
-                                    <td><span class="jz-weixin">微信</span></td>
-                                </tr>
-                                <tr>
-                                    <td>0.1</td>
-                                    <td>*文文</td>
-                                    <td></td>
-                                    <td><span class="jz-alipay">支付宝</span></td>
-                                </tr>
-                                <tr>
-                                    <td>0.01</td>
-                                    <td>*林</td>
-                                    <td></td>
-                                    <td><span class="jz-alipay">支付宝</span></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </main>
-        <footer class="site-footer uk-margin-large-top">
+        </div>
+        <div class="uk-block uk-text-center">
             <div class="uk-container uk-container-center">
-                <div class="uk-grid" data-uk-grid-margin>
-                    <div>
-                        <ul class="uk-nav uk-text-small">
-                            <li class="uk-nav-header">联系方式(请注明来意)</li>
-                            <li><a class="uk-link-muted" href="https://jq.qq.com/?_wv=1027&amp;k=5wXf4Zq"
-                                    target="_blank" rel="nofollow">QQ群：17916227</a></li>
-                            <li><a class="uk-link-muted">QQ：369124067</a></li>
-                            <li><a class="uk-link-muted">微信：wx_zhangrunyu</a></li>
-                            <li><a class="uk-link-muted">邮箱：<i id="em"></i></a></li>
-                        </ul>
-                    </div>
-                    <div class="uk-flex-item-1">
-
-                    </div>
-                    <div>
-                        <ul class="uk-nav uk-text-small">
-                            <li class="uk-nav-header">友情链接</li>
-                            <li><a class="uk-link-muted" href="https://www.swoole.com/" target="_blank">Swoole</a></li>
-                        </ul>
-                    </div>
-                    <div class="uk-text-right uk-text-center-small">
-                        <li><img src="images/logo.png"></li>
-                    </div>
+                <div class="uk-panel-space uk-panel-shadow">
+                    <p class="uk-h1 uk-text-bold uk-margin-large-top">Contribute to Open Source</p>
+                    <p class="uk-text-large uk-text-muted">imi follows the <a href="http://license.coscl.org.cn/MulanPSL/" target="_blank" rel="nofollow">Mulun Permissive Software License (Mulan PSL v1)</a> open source license and provides free use.</p>
+                    <p class="uk-margin-large">
+                        <a class="uk-button uk-button-large uk-button-outline uk-button-primary" href="#modal" data-uk-modal="{center:true}">Donate</a>
+                        <a class="uk-button uk-button-large uk-button-outline uk-button-primary" href="#modal2" data-uk-modal="{center:true}">Join Development</a>
+                    </p>
                 </div>
-
-                <p class="uk-text-center">Copyright © 2018-2021 imi 木兰宽松许可证(Mulan PSL v1)</p>
-                <p class="uk-text-center">感谢<a href="https://lovefc.cn/" target="_blank">封尘大佬</a>为 imi 制作官网模版</p>
-            </div>
-        </footer>
-        <div id="modal" class="uk-modal">
-            <div class="uk-modal-dialog">
-                <a href="javascript:;" class="uk-modal-close uk-close"></a>
-                <p class="uk-text-center">开源不求盈利，多少都是心意，生活不易，随缘随缘</p>
-                <img src="/images/pay.png" />
             </div>
         </div>
-        <div id="modal2" class="uk-modal">
-            <div class="uk-modal-dialog">
-                <a href="javascript:;" class="uk-modal-close uk-close"></a>
-                <p>想要加入我们吗？开源项目不能只靠一两个人，而是要靠大家的努力来完善~</p>
-                <p>我们需要你的加入，你可以做的事（包括但不限于以下）：</p>
-                <ul>
-                    <li>纠正拼写、错别字</li>
-                    <li>完善注释</li>
-                    <li>bug修复</li>
-                    <li>功能开发</li>
-                    <li>文档编写（<a href="https://github.com/imiphp/imi">https://github.com/imiphp/imi</a> 中的 doc 目录）</li>
-                    <li>教程、博客分享</li>
-                </ul>
+        <div class="uk-block uk-block-secondary uk-text-center uk-nbfc">
+            <div class="uk-container uk-container-center uk-position-relative uk-text-center">
+                <h2 class="uk-h1">Donation List</h2>
+                <div class="uk-text-muted">Thank you all for your help, I will work harder</div>
+                <table class="uk-table uk-table-hover">
+                    <thead>
+                        <th class="uk-text-center" style="width:10em">Amount</th>
+                        <th class="uk-text-center" style="width:14em">Donor</th>
+                        <th class="uk-text-center">Message</th>
+                        <th class="uk-text-center" style="width:8em">Channel</th>
+                    </thead>
+                </table>
+                <div class="jz-table-box">
+                    <table class="uk-table uk-table-hover jz-table">
+                        <tbody>
+                            <tr>
+                                <td style="width:10em">300.00</td>
+                                <td style="width:14em"><a href="https://blog.csdn.net/qq_32783703" target="_blank" rel="nofollow">张磊</a></td>
+                                <td></td>
+                                <td style="width:6em"><span class="jz-alipay">支付宝</span></td>
+                            </tr>
+                            <tr>
+                                <td>200</td>
+                                <td>牛顿呀</td>
+                                <td>imiphp 是永远的神</td>
+                                <td><span class="jz-weixin">微信</span></td>
+                            </tr>
+                            <tr>
+                                <td>105.21</td>
+                                <td>EasySwoole 贡献者——仙士可</td>
+                                <td></td>
+                                <td><span class="jz-weixin">微信</span></td>
+                            </tr>
+                            <tr>
+                                <td>100.00</td>
+                                <td>*能</td>
+                                <td></td>
+                                <td><span class="jz-alipay">支付宝</span></td>
+                            </tr>
+                            <tr>
+                                <td>99.99</td>
+                                <td>*宇</td>
+                                <td>希望开源产品长长久久</td>
+                                <td><span class="jz-weixin">微信</span></td>
+                            </tr>
+                            <tr>
+                                <td>88.88</td>
+                                <td><a href="https://www.dute.org" target="_blank" rel="nofollow">独特工具箱</a></td>
+                                <td>支持开源，支持imiphp</td>
+                                <td><span class="jz-weixin">微信</span></td>
+                            </tr>
+                            <tr>
+                                <td>66.66</td>
+                                <td>会的不多</td>
+                                <td>宇润的PaySDK用的很6，感谢啊！</td>
+                                <td><span class="jz-alipay">支付宝</span></td>
+                            </tr>
+                            <tr>
+                                <td>66.66</td>
+                                <td>*生</td>
+                                <td></td>
+                                <td><span class="jz-weixin">微信</span></td>
+                            </tr>
+                            <tr>
+                                <td>20.00</td>
+                                <td><a href="https://blog.yangyj.com/" target="_blank" rel="nofollow">yangyj</a></td>
+                                <td></td>
+                                <td><span class="jz-qq">QQ</span></td>
+                            </tr>
+                            <tr>
+                                <td>19.90</td>
+                                <td>*瑶</td>
+                                <td></td>
+                                <td><span class="jz-weixin">微信</span></td>
+                            </tr>
+                            <tr>
+                                <td>16.66</td>
+                                <td><a href="http://blog.mandian.vip/" target="_blank" rel="nofollow">慢点</a> (该博客使用 imi 开发)</td>
+                                <td></td>
+                                <td><span class="jz-weixin">微信</span></td>
+                            </tr>
+                            <tr>
+                                <td>16.66</td>
+                                <td>北*Q</td>
+                                <td></td>
+                                <td><span class="jz-weixin">微信</span></td>
+                            </tr>
+                            <tr>
+                                <td>12.16</td>
+                                <td>*森</td>
+                                <td>支持开源项目/精神</td>
+                                <td><span class="jz-weixin">微信</span></td>
+                            </tr>
+                            <tr>
+                                <td>11.00</td>
+                                <td>*健</td>
+                                <td>大佬辛苦了</td>
+                                <td><span class="jz-weixin">微信</span></td>
+                            </tr>
+                            <tr>
+                                <td>10.00</td>
+                                <td>*志伟</td>
+                                <td>OneTake支持yurun开源</td>
+                                <td><span class="jz-alipay">支付宝</span></td>
+                            </tr>
+                            <tr>
+                                <td>10.00</td>
+                                <td><a href="http://lovefc.cn/" target="_blank" rel="nofollow">封尘</a></td>
+                                <td></td>
+                                <td><span class="jz-alipay">支付宝</span></td>
+                            </tr>
+                            <tr>
+                                <td>10.00</td>
+                                <td>摄像头</td>
+                                <td></td>
+                                <td><span class="jz-alipay">支付宝</span></td>
+                            </tr>
+                            <tr>
+                                <td>10.00</td>
+                                <td><a href="http://www.yajiji.cc/" target="_blank" rel="nofollow">五十岚</a></td>
+                                <td>感谢开源精神，感谢付出。</td>
+                                <td><span class="jz-weixin">微信</span></td>
+                            </tr>
+                            <tr>
+                                <td>10.00</td>
+                                <td>J*U</td>
+                                <td>支持开源，群主加油</td>
+                                <td><span class="jz-weixin">微信</span></td>
+                            </tr>
+                            <tr>
+                                <td>8.88</td>
+                                <td>*愁</td>
+                                <td></td>
+                                <td><span class="jz-weixin">微信</span></td>
+                            </tr>
+                            <tr>
+                                <td>6.66</td>
+                                <td>Eleven</td>
+                                <td></td>
+                                <td><span class="jz-weixin">微信</span></td>
+                            </tr>
+                            <tr>
+                                <td>6.66</td>
+                                <td>J*w</td>
+                                <td></td>
+                                <td><span class="jz-weixin">微信</span></td>
+                            </tr>
+                            <tr>
+                                <td>6.66</td>
+                                <td>*兰胤</td>
+                                <td>imi加油</td>
+                                <td><span class="jz-alipay">支付宝</span></td>
+                            </tr>
+                            <tr>
+                                <td>6.00</td>
+                                <td>daxia</td>
+                                <td></td>
+                                <td><span class="jz-alipay">支付宝</span></td>
+                            </tr>
+                            <tr>
+                                <td>3.88</td>
+                                <td>努*n</td>
+                                <td></td>
+                                <td><span class="jz-weixin">微信</span></td>
+                            </tr>
+                            <tr>
+                                <td>3.00</td>
+                                <td>aLuckyfellow</td>
+                                <td>支持 yurun开源</td>
+                                <td><span class="jz-alipay">支付宝</span></td>
+                            </tr>
+                            <tr>
+                                <td>1.00</td>
+                                <td>*锐</td>
+                                <td>我是swoole5群的似是而非，支持一下</td>
+                                <td><span class="jz-alipay">支付宝</span></td>
+                            </tr>
+                            <tr>
+                                <td>0.88</td>
+                                <td>小公主</td>
+                                <td>希望老哥多写点demo</td>
+                                <td><span class="jz-weixin">微信</span></td>
+                            </tr>
+                            <tr>
+                                <td>0.1</td>
+                                <td>*文文</td>
+                                <td></td>
+                                <td><span class="jz-alipay">支付宝</span></td>
+                            </tr>
+                            <tr>
+                                <td>0.01</td>
+                                <td>*林</td>
+                                <td></td>
+                                <td><span class="jz-alipay">支付宝</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
-        <div style="display:none"><script src="https://s13.cnzz.com/z_stat.php?id=1273995867&web_id=1273995867" language="JavaScript"></script></div>
-        <script>
-        $(function(){
+    </main>
+    <footer class="site-footer uk-margin-large-top">
+        <div class="uk-container uk-container-center">
+            <div class="uk-grid" data-uk-grid-margin>
+                <div>
+                    <ul class="uk-nav uk-text-small">
+                        <li class="uk-nav-header">Contact Information (Please Specify Purpose)</li>
+                        <li><a class="uk-link-muted" href="https://jq.qq.com/?_wv=1027&amp;k=5wXf4Zq" target="_blank" rel="nofollow">QQ Group: 17916227</a></li>
+                        <li><a class="uk-link-muted">QQ: 369124067</a></li>
+                        <li><a class="uk-link-muted">WeChat: wx_zhangrunyu</a></li>
+                        <li><a class="uk-link-muted">Email: <i id="em"></i></a></li>
+                    </ul>
+                </div>
+                <div class="uk-flex-item-1"></div>
+                <div>
+                    <ul class="uk-nav uk-text-small">
+                        <li class="uk-nav-header">Friendly Links</li>
+                        <li><a class="uk-link-muted" href="https://www.swoole.com/" target="_blank">Swoole</a></li>
+                    </ul>
+                </div>
+                <div class="uk-text-right uk-text-center-small">
+                    <li><img src="images/logo.png"></li>
+                </div>
+            </div>
+            <p class="uk-text-center">Copyright © 2018-2021 imi Mulan Permissive Software License (Mulan PSL v1)</p>
+            <p class="uk-text-center">Thanks to <a href="https://lovefc.cn/" target="_blank">Fengchen</a> for creating the official website template for imi</p>
+        </div>
+    </footer>
+    <div id="modal" class="uk-modal">
+        <div class="uk-modal-dialog">
+            <a href="javascript:;" class="uk-modal-close uk-close"></a>
+            <p class="uk-text-center">Open source is not for profit, any amount is a gesture of goodwill, life is not easy, everything is fate</p>
+            <img src="/images/pay.png" />
+        </div>
+    </div>
+    <div id="modal2" class="uk-modal">
+        <div class="uk-modal-dialog">
+            <a href="javascript:;" class="uk-modal-close uk-close"></a>
+            <p>Want to join us? Open source projects cannot rely on one or two people, but require everyone's efforts to improve~</p>
+            <p>We need your participation, you can do things (including but not limited to the following):</p>
+            <ul>
+                <li>Correct spelling and typos</li>
+                <li>Improve comments</li>
+                <li>Bug fixes</li>
+                <li>Feature development</li>
+                <li>Document writing (<a href="https://github.com/imiphp/imi">https://github.com/imiphp/imi</a> in the doc directory)</li>
+                <li>Tutorial and blog sharing</li>
+            </ul>
+        </div>
+    </div>
+    <div style="display:none">
+        <script src="https://s13.cnzz.com/z_stat.php?id=1273995867&web_id=1273995867" language="JavaScript"></script>
+    </div>
+    <script>
+        $(function() {
             var em = 'yurun' + String.fromCharCode(32 * 2) + 'yurunsoft.com';
             $('#em').html('<a href="mailto:' + em + '">' + em + '</a>');
         });
-        </script>
-    </body>
+    </script>
+</body>
+
 </html>
