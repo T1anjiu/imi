@@ -13,21 +13,21 @@ use PHPUnit\Framework\Assert;
 abstract class QueryCurdBaseTest extends BaseTest
 {
     /**
-     * 连接池名.
+     * Connection Pool's Name.
      *
      * @var string
      */
     protected $poolName;
 
     /**
-     * 测试 whereEx 的 SQL.
+     * Testing SQL for whereEx.
      *
      * @var string
      */
     protected $expectedTestWhereExSql;
 
     /**
-     * 测试 JSON 查询的 SQL.
+     * Testing SQL for JSON queries.
      *
      * @var string
      */
@@ -278,9 +278,9 @@ abstract class QueryCurdBaseTest extends BaseTest
                 'id'    => ['in', [1]],
             ],
         ])->select();
-        // 多条件SQL
+        // Multi-condition SQL
         Assert::assertEquals($this->expectedTestWhereExSql, $result->getSql());
-        // 查询记录
+        // get record
         $record = $result->get();
         Assert::assertEquals([
             'id'        => '1',
@@ -347,19 +347,19 @@ abstract class QueryCurdBaseTest extends BaseTest
     {
         $query = Db::query($this->poolName);
         $jsonStr = '{"uid": "' . ($uid = uniqid('', true)) . '", "name": "aaa", "list1": [{"id": 1}]}';
-        // 插入数据
+        // insert data
         $insertResult = $query->from('tb_test_json')->insert([
             'json_data' => $jsonStr,
         ]);
         $id = $insertResult->getLastInsertId();
-        // 查询条件
+        // query conditions
         $result = $query->from('tb_test_json')->where('json_data->uid', '=', $uid)->select();
         $this->assertEquals([
             'id'        => $id,
             'json_data' => $jsonStr,
         ], $result->get());
         $this->assertEquals($this->expectedTestJsonSelectSql, $result->getSql());
-        // 更新数据
+        // updating data
         $query->from('tb_test_json')->where('json_data->uid', '=', $uid)->update([
             'json_data->a'           => '1',
             'json_data->name'        => 'bbb',

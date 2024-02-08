@@ -98,7 +98,7 @@ class ObjectArrayHelperTest extends BaseTest
             'id'      => 1,
             'name'    => 'imi',
         ];
-        // 只保留 name 字段
+        // Only keep the 'name' field
         ObjectArrayHelper::filter($data, ['name']);
         $this->assertEquals([
             'name'    => 'imi',
@@ -108,7 +108,7 @@ class ObjectArrayHelperTest extends BaseTest
             'id'      => 1,
             'name'    => 'imi',
         ];
-        // 剔除 name 字段
+        // Remove the 'name' field
         ObjectArrayHelper::filter($data, ['name'], 'deny');
         $this->assertEquals([
             'id'    => 1,
@@ -118,7 +118,7 @@ class ObjectArrayHelperTest extends BaseTest
         $data = new \stdClass();
         $data->id = 1;
         $data->name = 'imi';
-        // 只保留 name 字段
+        // Only keep the 'name' field
         ObjectArrayHelper::filter($data, ['name']);
         $this->assertEquals('imi', $data->name);
         $this->assertFalse(ObjectArrayHelper::exists($data, 'id'));
@@ -126,7 +126,7 @@ class ObjectArrayHelperTest extends BaseTest
         $data = new \stdClass();
         $data->id = 1;
         $data->name = 'imi';
-        // 剔除 name 字段
+        // Remove the 'name' field
         ObjectArrayHelper::filter($data, ['name'], 'deny');
         $this->assertEquals(1, $data->id);
         $this->assertFalse(ObjectArrayHelper::exists($data, 'name'));

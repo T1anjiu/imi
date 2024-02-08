@@ -229,7 +229,7 @@ class CronCalculatorTest extends BaseTest
     public function testAll()
     {
         $beginTime = strtotime('2018-06-21 12:34:56');
-        // 每天 0 点执行一次
+        // Execute once every day at 0 o'clock
         $this->assertEquals(strtotime('2018-06-22 00:00:00'), $lastTime = $this->cronCalculator->getNextTickTime($beginTime, [
             new CronRule(['hour' => '0', 'minute' => '0', 'second' => '0']),
         ]));
@@ -237,7 +237,7 @@ class CronCalculatorTest extends BaseTest
             new CronRule(['hour' => '0', 'minute' => '0', 'second' => '0']),
         ]));
 
-        // 每 15 分钟执行一次
+        // Executed every 15 minutes
         $this->assertEquals(strtotime('2018-06-21 12:49:56'), $lastTime = $this->cronCalculator->getNextTickTime($beginTime, [
             new CronRule(['minute' => '15n']),
         ]));
@@ -245,7 +245,7 @@ class CronCalculatorTest extends BaseTest
             new CronRule(['minute' => '15n']),
         ]));
 
-        // 每周一中午 12 点执行
+        // Executed every Monday at 12 noon
         $this->assertEquals(strtotime('2018-06-25 12:00:00'), $lastTime = $this->cronCalculator->getNextTickTime($beginTime, [
             new CronRule(['week' => '1', 'hour' => '12', 'minute' => '0', 'second' => '0']),
         ]));
@@ -253,7 +253,7 @@ class CronCalculatorTest extends BaseTest
             new CronRule(['week' => '1', 'hour' => '12', 'minute' => '0', 'second' => '0']),
         ]));
 
-        // 每月倒数第 3 天中午 12 点
+        // 12 noon on the third last day of every month
         $this->assertEquals(strtotime('2019-02-26 12:00:00'), $lastTime = $this->cronCalculator->getNextTickTime(strtotime('2019-01-31 12:00:00'), [
             new CronRule(['day' => '-3', 'hour' => '12', 'minute' => '0', 'second' => '0']),
         ]));

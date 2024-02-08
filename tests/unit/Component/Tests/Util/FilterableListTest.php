@@ -17,7 +17,7 @@ class FilterableListTest extends BaseTest
             ['id' => 2, 'name' => 'b'],
         ];
 
-        // 剔除 name 字段
+        // Remove the 'name' field
         $list = new FilterableList($originData, ['name'], 'deny');
         foreach ($list as $k => $v)
         {
@@ -26,7 +26,7 @@ class FilterableListTest extends BaseTest
             ], $v);
         }
 
-        // 只保留 name 字段
+        // Only keep the 'name' field
         $list = new FilterableList($originData, ['name']);
         foreach ($list as $k => $v)
         {

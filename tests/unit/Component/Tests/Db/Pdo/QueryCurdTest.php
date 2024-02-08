@@ -10,21 +10,21 @@ use Imi\Test\Component\Tests\Db\QueryCurdBaseTest;
 class QueryCurdTest extends QueryCurdBaseTest
 {
     /**
-     * 连接池名.
+     * Connection Pool's Name.
      *
      * @var string
      */
     protected $poolName = 'maindb';
 
     /**
-     * 测试 whereEx 的 SQL.
+     * Testing SQL for whereEx.
      *
      * @var string
      */
     protected $expectedTestWhereExSql = 'select * from `tb_article` where (`id` = :p1 and (`id` in (:p2) ) )';
 
     /**
-     * 测试 JSON 查询的 SQL.
+     * Testing SQL for JSON queries.
      *
      * @var string
      */

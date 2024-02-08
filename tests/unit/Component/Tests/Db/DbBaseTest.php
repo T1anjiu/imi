@@ -14,7 +14,7 @@ use PHPUnit\Framework\Assert;
 abstract class DbBaseTest extends BaseTest
 {
     /**
-     * 连接池名.
+     * Connection Pool's Name.
      *
      * @var string
      */

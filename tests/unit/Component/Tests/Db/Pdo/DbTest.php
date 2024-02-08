@@ -10,7 +10,7 @@ use Imi\Test\Component\Tests\Db\DbBaseTest;
 class DbTest extends DbBaseTest
 {
     /**
-     * 连接池名.
+     * Connection Pool's Name.
      *
      * @var string
      */
