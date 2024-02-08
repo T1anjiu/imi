@@ -35,7 +35,7 @@ return [
         'imi.ConnectContextRedisLock',
         'imi.GroupRedisLock',
     ],
-    // 跳过初始化的工具
+    // Tools that skip initialization
     'skipInitTools' => [
         ['imi', 'buildImiRuntime'],
         ['imi', 'clearImiRuntime'],

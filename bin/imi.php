@@ -12,7 +12,7 @@ $imi = new class() {
             $paths = [
                 $_SERVER['PWD'] ?? getcwd(),
                 dirname(__DIR__),
-                dirname(__DIR__, 4), // 在非工作路径，使用绝对路径启动
+                dirname(__DIR__, 4), // In non-working paths, use absolute paths to start
             ];
             foreach ($paths as $path)
             {
