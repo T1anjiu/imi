@@ -8,7 +8,7 @@ use Psr\Http\Server\MiddlewareInterface;
 use Psr\Http\Server\RequestHandlerInterface;
 
 /**
- * 增加一个响应头，仅作演示，生产环境请去除.
+ * Add a response header for demonstration purposes only. Remove it in production environment.
  */
 class PoweredBy implements MiddlewareInterface
 {
