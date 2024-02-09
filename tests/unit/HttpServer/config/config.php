@@ -1,15 +1,15 @@
 <?php
 
 return [
-    // 项目根命名空间
+    // project root namespace
     'namespace'    => 'Imi\Test\HttpServer',
 
-    // 配置文件
+    // Configuration
     'configs'    => [
         'beans'        => __DIR__ . '/beans.php',
     ],
 
-    // 扫描目录
+    // Scan directory
     'beanScan'    => [
         'Imi\Test\HttpServer\Listener',
         'Imi\Test\HttpServer\Task',
@@ -18,11 +18,11 @@ return [
         'Imi\Test\HttpServer\Listener',
     ],
 
-    // 组件命名空间
+    // Component namespace
     'components'    => [
     ],
 
-    // 主服务器配置
+    // Main server configuration
     'mainServer'    => [
         'namespace'    => 'Imi\Test\HttpServer\ApiServer',
         'type'         => Imi\Server\Type::HTTP,
@@ -35,7 +35,7 @@ return [
         ],
     ],
 
-    // 子服务器（端口监听）配置
+    // Subserver (port listening) configuration
     'subServers'    => [
         'SessionTest'   => [
             'namespace' => 'Imi\Test\HttpServer\SessionTestServer',
@@ -68,11 +68,11 @@ return [
         ],
     ],
 
-    // 连接池配置
+    // Connection pool configuration
     'pools'    => [
-        // 主数据库
+        // main database
         'maindb'    => [
-            // 同步池子
+            // Sync pool
             'sync'    => [
                 'pool'    => [
                     'class'        => \Imi\Db\Pool\SyncDbPool::class,
@@ -90,7 +90,7 @@ return [
                     'charset'     => 'utf8mb4',
                 ],
             ],
-            // 异步池子，worker进程使用
+            // Asynchronous pool, used by worker processes
             'async'    => [
                 'pool'    => [
                     'class'        => \Imi\Db\Pool\CoroutineDbPool::class,
@@ -141,19 +141,19 @@ return [
         ],
     ],
 
-    // 数据库配置
+    // Database configuration
     'db'    => [
-        // 数默认连接池名
+        // Number of default connection pool names
         'defaultPool'    => 'maindb',
     ],
 
-    // redis 配置
+    // redis configuration
     'redis' => [
-        // 数默认连接池名
-        'defaultPool'   => 'redis',
+        // Number of default connection pool names
+        'defaultPool'   =configuration> 'redis',
     ],
 
-    // 内存表配置
+    // Memory table 
     'memoryTable'   => [
         't1'    => [
             'columns'   => [
@@ -168,7 +168,7 @@ return [
         ],
     ],
 
-    // 锁
+    // Lock
     'lock'  => [
         'list'  => [
             // 'atomic' =>  [
@@ -192,7 +192,7 @@ return [
         ],
     ],
 
-    // atmoic 配置
+    // atmoic configuration
     'atomics'    => [
         'atomicLock'   => 1,
     ],

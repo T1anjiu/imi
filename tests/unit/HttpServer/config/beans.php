@@ -5,27 +5,27 @@ use Imi\Log\LogLevel;
 $rootPath = dirname(__DIR__) . '/';
 
 return [
-    'hotUpdate'    => [
-        'status'    => false, // 关闭热更新去除注释，不设置即为开启，建议生产环境关闭
+'hotUpdate' => [
+'status' => false, // Disable hot update by uncommenting this line, enable by default if not set, recommended to disable in production environment
 
-        // --- 文件修改时间监控 ---
-        // 'monitorClass'    =>    \Imi\HotUpdate\Monitor\FileMTime::class,
-        'timespan'    => 1, // 检测时间间隔，单位：秒
-
-        // --- Inotify 扩展监控 ---
-        // 'monitorClass'    =>    \Imi\HotUpdate\Monitor\Inotify::class,
-        // 'timespan'    =>    1, // 检测时间间隔，单位：秒，使用扩展建议设为0性能更佳
-
-        // 'includePaths'    =>    [], // 要包含的路径数组
-        'excludePaths'    => [
-            $rootPath . '.git',
-            $rootPath . 'bin',
-            $rootPath . 'logs',
-        ], // 要排除的路径数组，支持通配符*
+// --- File modification time monitoring ---  
+    // 'monitorClass' => \Imi\HotUpdate\Monitor\FileMTime::class,  
+    'timespan' => 1, // Detection time interval, unit: second  
+ 
+    // --- Inotify extension monitoring ---  
+    // 'monitorClass' => \Imi\HotUpdate\Monitor\Inotify::class,  
+    // 'timespan' => 1, // Detection time interval, unit: second, recommended to set to 0 for better performance when using the extension  
+ 
+    // 'includePaths' => [], // An array of paths to include  
+    'excludePaths' => [  
+        $rootPath . '.git',  
+        $rootPath . 'bin',  
+        $rootPath . 'logs',  
+      ], // An array of paths to exclude, supports wildcard *  
     ],
     'Logger'    => [
         'exHandlers'    => [
-            // info 级别日志不输出trace
+            // Info-level logs do not output trace information.
             [
                 'class'        => \Imi\Log\Handler\File::class,
                 'options'      => [
@@ -34,7 +34,7 @@ return [
                     'format'        => '{Y}-{m}-{d} {H}:{i}:{s} [{level}] {message}',
                 ],
             ],
-            // 指定级别日志输出trace
+            // Specified-level logs output trace information.
             [
                 'class'        => \Imi\Log\Handler\File::class,
                 'options'      => [
@@ -54,7 +54,7 @@ return [
             ],
         ],
     ],
-    // 启用超全局变量
+    // Enable superglobal variables
     'SuperGlobals'  => [
         'enable'    => true,
     ],
