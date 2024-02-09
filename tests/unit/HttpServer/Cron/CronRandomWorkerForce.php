@@ -11,7 +11,7 @@ use Imi\Cron\Contract\ICronTask;
 class CronRandomWorkerForce implements ICronTask
 {
     /**
-     * 执行任务
+     * perform tasks
      *
      * @param string $id
      * @param mixed  $data

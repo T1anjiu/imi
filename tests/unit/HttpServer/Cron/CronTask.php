@@ -11,7 +11,7 @@ use Imi\Cron\Contract\ICronTask;
 class CronTask implements ICronTask
 {
     /**
-     * 执行任务
+     * perform tasks
      *
      * @param string $id
      * @param mixed  $data

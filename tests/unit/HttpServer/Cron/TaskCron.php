@@ -15,7 +15,7 @@ use Imi\Task\TaskParam;
 class TaskCron implements ITaskHandler
 {
     /**
-     * 任务处理方法.
+     * Task processing methods.
      *
      * @param TaskParam      $param
      * @param \Swoole\Server $server
@@ -32,7 +32,7 @@ class TaskCron implements ITaskHandler
     }
 
     /**
-     * 任务结束时触发.
+     * Fires when the task ends.
      *
      * @param \swoole_server $server
      * @param int            $taskID

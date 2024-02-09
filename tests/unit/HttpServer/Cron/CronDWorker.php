@@ -7,7 +7,7 @@ use Imi\Cron\Contract\ICronTask;
 class CronDWorker implements ICronTask
 {
     /**
-     * 执行任务
+     * perform tasks
      *
      * @param string $id
      * @param mixed  $data
@@ -16,6 +16,6 @@ class CronDWorker implements ICronTask
      */
     public function run(string $id, $data)
     {
-        var_dump('动态');
+        var_dump('dynamic');
     }
 }
