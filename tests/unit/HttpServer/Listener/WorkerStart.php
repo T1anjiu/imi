@@ -16,7 +16,7 @@ use Imi\Worker;
 class WorkerStart implements IWorkerStartEventListener
 {
     /**
-     * 事件处理方法.
+     * Event handling methods.
      *
      * @param WorkerStartEventParam $e
      *
