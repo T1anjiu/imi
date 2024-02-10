@@ -3,7 +3,7 @@
 return [
     'configs'    => [
     ],
-    // bean扫描目录
+    // bean scanning directory
     'beanScan'    => [
         'Imi\Test\HttpServer\Http2TestServer\Controller',
     ],
