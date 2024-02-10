@@ -21,7 +21,7 @@ class HttpsTest extends BaseTest
     }
 
     /**
-     * 测试 Uri 地址
+     * test Uri address
      *
      * @return void
      */
@@ -35,7 +35,7 @@ class HttpsTest extends BaseTest
     }
 
     /**
-     * 控制器指定 server 测试.
+     * Controller-specified server testing
      *
      * @return void
      */

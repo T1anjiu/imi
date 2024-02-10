@@ -20,7 +20,7 @@ class Http2Test extends BaseTest
     }
 
     /**
-     * 测试 Uri 地址
+     * test Uri address
      *
      * @return void
      */

@@ -188,7 +188,7 @@ class RequestTest extends BaseTest
     }
 
     /**
-     * 控制器不在服务器目录下的测试.
+     * Testing with the controller located outside the server directory.
      *
      * @return void
      */
@@ -201,7 +201,7 @@ class RequestTest extends BaseTest
     }
 
     /**
-     * 测试动作传入的参数值
+     * Testing the parameter values passed into the action
      *
      * @return void
      */
@@ -230,7 +230,7 @@ class RequestTest extends BaseTest
     }
 
     /**
-     * 测试 Uri 地址
+     * test Uri address
      *
      * @return void
      */
@@ -244,7 +244,7 @@ class RequestTest extends BaseTest
     }
 
     /**
-     * 测试执行超时.
+     * Test execution timeout
      *
      * @return void
      */
@@ -259,7 +259,7 @@ class RequestTest extends BaseTest
     }
 
     /**
-     * 测试未找到匹配路由情况.
+     * Testing the scenario where no matching route is found
      *
      * @return void
      */
@@ -272,7 +272,7 @@ class RequestTest extends BaseTest
     }
 
     /**
-     * 测试正则路由.
+     * Testing regular expression routing
      *
      * @return void
      */

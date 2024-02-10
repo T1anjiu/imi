@@ -10,7 +10,7 @@ use Yurun\Util\HttpRequest;
 class ProcessTest extends BaseTest
 {
     /**
-     * 测试 @PoolClean 注解，mode=allow.
+     * Testing @PoolClean annotation with mode=allow.
      *
      * @return void
      */
@@ -29,7 +29,7 @@ class ProcessTest extends BaseTest
     }
 
     /**
-     * 测试 @PoolClean 注解，mode=deny.
+     * Testing @PoolClean annotation with mode=deny.
      *
      * @return void
      */

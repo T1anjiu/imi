@@ -19,9 +19,9 @@ class ResponseTest extends BaseTest
     {
         $http = new HttpRequest();
         $response = $http->get($this->host . 'middleware');
-        // 全局中间件
+        // global middleware
         $this->assertEquals('imiphp.com', $response->getHeaderLine('X-Powered-By'));
-        // 局部中间件
+        // scoped middleware
         $this->assertEquals('1', $response->getHeaderLine('imi-middleware-1'));
         $this->assertEquals('2', $response->getHeaderLine('imi-middleware-2'));
         $this->assertEquals('3', $response->getHeaderLine('imi-middleware-3'));
@@ -37,7 +37,7 @@ class ResponseTest extends BaseTest
     {
         $http = new HttpRequest();
         $response = $http->send($this->host, '', 'OPTIONS');
-        // OPTIONS 中间件
+        // OPTIONS middleware
         $this->assertEquals('http://127.0.0.1', $response->getHeaderLine('Access-Control-Allow-Origin'));
         $this->assertEquals('Authorization, Content-Type, Accept, Origin, If-Match, If-Modified-Since, If-None-Match, If-Unmodified-Since, X-Requested-With, X-Id, X-Token, Cookie', $response->getHeaderLine('Access-Control-Allow-Headers'));
         $this->assertEquals('Authorization, Content-Type, Accept, Origin, If-Match, If-Modified-Since, If-None-Match, If-Unmodified-Since, X-Requested-With, X-Id, X-Token, Cookie', $response->getHeaderLine('Access-Control-Expose-Headers'));
