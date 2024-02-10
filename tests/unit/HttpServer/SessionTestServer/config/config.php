@@ -3,7 +3,7 @@
 return [
     'configs'    => [
     ],
-    // bean扫描目录
+    // bean scanning directory
     'beanScan'    => [
         'Imi\Test\HttpServer\SessionTestServer\Controller',
     ],
@@ -28,7 +28,7 @@ return [
         ],
         'HtmlView'    => [
             'templatePath'    => dirname(__DIR__) . '/template/',
-            // 支持的模版文件扩展名，优先级按先后顺序
+            // Supported template file extensions, listed in order of priority
             'fileSuffixs'        => [
                 'tpl',
                 'html',

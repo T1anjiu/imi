@@ -10,7 +10,7 @@ use Imi\Bean\Annotation\Bean;
 class TestService
 {
     /**
-     * 测试方法.
+     * Test method
      *
      * @param int $time
      *
