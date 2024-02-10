@@ -12,7 +12,7 @@ use Imi\Task\TaskParam;
 class TestTask implements ITaskHandler
 {
     /**
-     * 任务处理方法.
+     * Task handling method
      *
      * @param TaskParam      $param
      * @param \Swoole\Server $server
@@ -29,7 +29,7 @@ class TestTask implements ITaskHandler
     }
 
     /**
-     * 任务结束时触发.
+     * Triggered when the task completes
      *
      * @param \swoole_server $server
      * @param int            $taskID
